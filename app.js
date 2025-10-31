@@ -1,7 +1,6 @@
 const menu = document.querySelector('#menu');
 const toggle = document.querySelector('.menu-toggle');
 const links = document.querySelectorAll('.menu-link');
-const sections = document.querySelectorAll('main section');
 const filterButtons = document.querySelectorAll('.filter-button');
 const galleryCards = document.querySelectorAll('.gallery-card');
 const modal = document.querySelector('.modal');
@@ -10,6 +9,7 @@ const modalClose = document.querySelector('.modal-close');
 const modalBackdrop = document.querySelector('.modal-backdrop');
 const compareSliders = document.querySelectorAll('.compare-slider');
 const year = document.querySelector('#year');
+const form = document.querySelector('.contact-form');
 
 if (year) {
   year.textContent = new Date().getFullYear();
@@ -25,39 +25,19 @@ if (toggle && menu) {
 
 links.forEach((link) => {
   link.addEventListener('click', () => {
-    menu.classList.remove('open');
+    menu?.classList.remove('open');
     toggle?.classList.remove('open');
     toggle?.setAttribute('aria-expanded', 'false');
   });
 });
 
-const activateLinkOnScroll = () => {
-  const scrollPosition = window.scrollY + 140;
-
-  sections.forEach((section) => {
-    const id = section.getAttribute('id');
-    if (!id) return;
-    const link = document.querySelector(`.menu-link[href="#${id}"]`);
-    if (!link) return;
-    const sectionTop = section.offsetTop;
-    const sectionBottom = sectionTop + section.offsetHeight;
-
-    if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
-      links.forEach((item) => item.classList.remove('active'));
-      link.classList.add('active');
-    }
-  });
-};
-
-window.addEventListener('scroll', activateLinkOnScroll);
-activateLinkOnScroll();
-
 filterButtons.forEach((button) => {
   button.addEventListener('click', () => {
     const filter = button.dataset.filter;
     filterButtons.forEach((btn) => {
-      btn.classList.toggle('active', btn === button);
-      btn.setAttribute('aria-selected', String(btn === button));
+      const isActive = btn === button;
+      btn.classList.toggle('active', isActive);
+      btn.setAttribute('aria-selected', String(isActive));
     });
 
     galleryCards.forEach((card) => {
@@ -69,7 +49,7 @@ filterButtons.forEach((button) => {
 });
 
 const openModal = (content) => {
-  if (!modal) return;
+  if (!modal || !modalContent) return;
   modalContent.innerHTML = '';
   modalContent.append(content.cloneNode(true));
   modal.setAttribute('aria-hidden', 'false');
@@ -77,7 +57,7 @@ const openModal = (content) => {
 };
 
 const closeModal = () => {
-  if (!modal) return;
+  if (!modal || !modalContent) return;
   modal.setAttribute('aria-hidden', 'true');
   modalContent.innerHTML = '';
   document.body.style.overflow = '';
@@ -118,8 +98,6 @@ compareSliders.forEach((slider) => {
   });
   slider.dispatchEvent(new Event('input'));
 });
-
-const form = document.querySelector('.contact-form');
 
 if (form) {
   form.addEventListener('submit', (event) => {

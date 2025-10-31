@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Studio Brezer • Portfólio que vende</title>
+    <title>Studio Brezer • Design que vende</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -12,20 +12,20 @@
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body>
-    <header class="site-header" id="topo">
+  <body class="page-home">
+    <header class="site-header">
       <div class="container header-bar">
-        <a class="brand" href="#home" aria-label="Studio Brezer">
+        <a class="brand" href="index.html" aria-label="Studio Brezer">
           <img src="assets/logo-brezer.svg" alt="Studio Brezer" width="44" height="44" />
           <span>Studio Brezer</span>
         </a>
         <nav id="menu" class="menu" aria-label="Navegação principal">
-          <a class="menu-link" href="#home">Home</a>
-          <a class="menu-link" href="#portfolio">Portfólio</a>
-          <a class="menu-link" href="#servicos">Serviços</a>
-          <a class="menu-link" href="#ifood">iFood</a>
-          <a class="menu-link" href="#sobre">Sobre</a>
-          <a class="menu-link" href="#contato">Contato</a>
+          <a class="menu-link active" href="index.html" aria-current="page">Home</a>
+          <a class="menu-link" href="portfolio.html">Portfólio</a>
+          <a class="menu-link" href="servicos.html">Serviços</a>
+          <a class="menu-link" href="ifood.html">iFood</a>
+          <a class="menu-link" href="sobre.html">Sobre</a>
+          <a class="menu-link" href="contato.html">Contato</a>
         </nav>
         <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false">
           <span></span>
@@ -36,558 +36,134 @@
     </header>
 
     <main>
-      <section id="home" class="hero">
+      <section class="hero hero-home">
         <div class="container hero-grid">
           <div class="hero-copy">
-            <span class="eyebrow">Design que vende</span>
-            <h1>Transformamos ideias em identidade visual, social media e cardápios que convertem.</h1>
+            <span class="eyebrow">Portfólio que vende</span>
+            <h1>Design limpo, direto e pensado para o resultado do seu negócio.</h1>
             <p class="lead">
-              O Studio Brezer entrega design direto ao ponto: clareza, consistência e materiais prontos para gerar resultado sem ruído.
+              O Studio Brezer cria identidades, materiais e experiências digitais que contam a
+              história da sua marca e convertem atenção em vendas.
             </p>
             <div class="hero-actions">
-              <a class="button" href="#portfolio">Ver portfólio</a>
-              <a class="ghost-button" href="#contato">Falar com o estúdio</a>
+              <a class="button" href="portfolio.html">Ver portfólio</a>
+              <a class="ghost-button" href="contato.html">Iniciar projeto</a>
             </div>
           </div>
-          <div class="hero-highlight card">
+          <div class="hero-showcase card">
             <h3>O que entregamos</h3>
             <ul>
-              <li>Direção visual clara</li>
-              <li>Materiais prontos para publicar</li>
-              <li>Suporte próximo e sem burocracia</li>
+              <li>Kits completos de identidade visual</li>
+              <li>Gestão visual de social media</li>
+              <li>Materiais impressos e embalagens</li>
+              <li>Otimização de cardápio iFood</li>
             </ul>
+            <a class="link" href="servicos.html">Explorar serviços</a>
           </div>
         </div>
       </section>
 
-      <section class="section" aria-labelledby="portfolio-home-title">
+      <section class="section home-portfolio">
         <div class="container">
           <header class="section-header">
-            <span class="eyebrow">Portfólio</span>
             <div>
-              <h2 id="portfolio-home-title">Melhores projetos</h2>
-              <p>Um recorte rápido de identidades, social media e cardápios prontos para vender mais.</p>
+              <span class="eyebrow">Projetos em destaque</span>
+              <h2>Trabalhos que mostram nossa clareza visual</h2>
             </div>
+            <a class="link" href="portfolio.html">Abrir portfólio completo</a>
           </header>
           <div class="grid projects-grid">
             <article class="project-card">
               <img src="assets/portfolio-feed.svg" alt="Feed social organizado" loading="lazy" />
-              <h3>Identidade visual com ritmo</h3>
-              <p>Direção visual e kit completo para lançar marca com consistência.</p>
+              <h3>Identidade consistente</h3>
+              <p>Marca completa com aplicações para digitais e impressos.</p>
             </article>
             <article class="project-card">
               <img src="assets/portfolio-banners.svg" alt="Campanhas digitais" loading="lazy" />
-              <h3>Campanhas e landing pages</h3>
-              <p>Materiais de lançamento com copy e design alinhados à conversão.</p>
+              <h3>Campanhas digitais</h3>
+              <p>Landing pages e banners com foco em conversão.</p>
             </article>
             <article class="project-card">
               <img src="assets/portfolio-stories.svg" alt="Stories promocionais" loading="lazy" />
-              <h3>Stories que convertem</h3>
-              <p>Sequências rápidas para CTA com métricas acima da média.</p>
-            </article>
-            <article class="project-card">
-              <img src="assets/portfolio-feed.svg" alt="Feed colorido" loading="lazy" />
-              <h3>Social media mensal</h3>
-              <p>Planejamento visual e textos curtos para rotinas puxadas.</p>
-            </article>
-            <article class="project-card">
-              <img src="assets/portfolio-banners.svg" alt="Materiais gráficos" loading="lazy" />
-              <h3>Materiais gráficos</h3>
-              <p>Cardápios, folhetos e impressos com acabamento impecável.</p>
-            </article>
-            <article class="project-card">
-              <img src="assets/portfolio-stories.svg" alt="Stories animados" loading="lazy" />
-              <h3>Embalagens e rótulos</h3>
-              <p>Design de embalagem alinhado ao posicionamento e às prateleiras.</p>
+              <h3>Social media vivo</h3>
+              <p>Calendário mensal, linguagem clara e ritmo visual.</p>
             </article>
           </div>
         </div>
       </section>
 
-      <section class="section" aria-labelledby="services-home-title">
+      <section class="section home-services">
         <div class="container">
           <header class="section-header">
-            <span class="eyebrow">Serviços</span>
             <div>
-              <h2 id="services-home-title">Principais entregas</h2>
-              <p>Escolha o formato certo e receba um plano visual claro para aplicar agora.</p>
+              <span class="eyebrow">Como podemos ajudar</span>
+              <h2>Serviços essenciais para posicionar sua marca</h2>
             </div>
-          </header>
-          <div class="grid services-highlight">
-            <article class="service-pill">
-              <h3>Identidade visual</h3>
-              <p>Guia completo, aplicações e materiais de apoio.</p>
-            </article>
-            <article class="service-pill">
-              <h3>Social media</h3>
-              <p>Calendário mensal com posts, stories e copys prontos.</p>
-            </article>
-            <article class="service-pill">
-              <h3>Melhorias iFood</h3>
-              <p>Fotos, descrições e cardápio otimizados para o app.</p>
-            </article>
-            <article class="service-pill">
-              <h3>Materiais impressos</h3>
-              <p>Cardápios, embalagens e peças para PDV.</p>
-            </article>
-          </div>
-          <div class="cta-bar">
-            <div>
-              <h3>Pronto para destacar sua marca?</h3>
-              <p>Conte com um estúdio parceiro para tirar ideias do papel em poucas semanas.</p>
-            </div>
-            <a class="button" href="#contato">Quero começar</a>
-          </div>
-        </div>
-      </section>
-
-      <section id="portfolio" class="section" aria-labelledby="portfolio-title">
-        <div class="container">
-          <header class="section-header stack">
-            <div>
-              <span class="eyebrow">Portfólio completo</span>
-              <h2 id="portfolio-title">Projetos por categoria</h2>
-            </div>
-            <div class="filters" role="tablist" aria-label="Filtro de projetos">
-              <button class="filter-button active" type="button" data-filter="all" role="tab" aria-selected="true">Todos</button>
-              <button class="filter-button" type="button" data-filter="identidade" role="tab">Identidade Visual</button>
-              <button class="filter-button" type="button" data-filter="social" role="tab">Social Media</button>
-              <button class="filter-button" type="button" data-filter="embalagem" role="tab">Embalagens</button>
-              <button class="filter-button" type="button" data-filter="ifood" role="tab">iFood</button>
-            </div>
-          </header>
-          <div class="grid gallery" role="list">
-            <article class="gallery-card" role="listitem" data-category="identidade">
-              <button class="gallery-trigger" type="button" data-modal="identidade">
-                <img src="assets/portfolio-feed.svg" alt="Identidade visual Studio Flora" loading="lazy" />
-                <div class="gallery-card-body">
-                  <h3>Studio Flora</h3>
-                  <p>Rebranding completo para empresa de paisagismo.</p>
-                </div>
-              </button>
-              <template id="modal-identidade">
-                <h3>Studio Flora</h3>
-                <p class="modal-subtitle">Identidade Visual • 2024</p>
-                <p><strong>Desafio:</strong> Atualizar a comunicação visual mantendo a essência artesanal.</p>
-                <p><strong>Solução:</strong> Sistema tipográfico orgânico, paleta botânica e guia de aplicações.</p>
-                <p><strong>Resultado:</strong> +38% em pedidos de orçamento no trimestre seguinte ao lançamento.</p>
-              </template>
-            </article>
-            <article class="gallery-card" role="listitem" data-category="social">
-              <button class="gallery-trigger" type="button" data-modal="social">
-                <img src="assets/portfolio-banners.svg" alt="Campanha digital para lançamento" loading="lazy" />
-                <div class="gallery-card-body">
-                  <h3>Campanha Blitz</h3>
-                  <p>Sequência de lançamentos com foco em conversão.</p>
-                </div>
-              </button>
-              <template id="modal-social">
-                <h3>Campanha Blitz</h3>
-                <p class="modal-subtitle">Social Media • 2023</p>
-                <p><strong>Desafio:</strong> Criar campanha ágil para captar leads em 15 dias.</p>
-                <p><strong>Solução:</strong> Landing page + kit de stories e anúncios otimizados.</p>
-                <p><strong>Resultado:</strong> 2,4x mais cadastros com o mesmo investimento em mídia.</p>
-              </template>
-            </article>
-            <article class="gallery-card" role="listitem" data-category="ifood">
-              <button class="gallery-trigger" type="button" data-modal="ifood">
-                <img src="assets/ifood-after.svg" alt="Cardápio otimizado para iFood" loading="lazy" />
-                <div class="gallery-card-body">
-                  <h3>Cardápio Gourmand</h3>
-                  <p>Tratamento de fotos e revisão de descrições.</p>
-                </div>
-              </button>
-              <template id="modal-ifood">
-                <h3>Cardápio Gourmand</h3>
-                <p class="modal-subtitle">Melhorias iFood • 2024</p>
-                <p><strong>Desafio:</strong> Imagens escuras e descrições confusas derrubavam os pedidos.</p>
-                <p><strong>Solução:</strong> Tratamento profissional, novos destaques e kit promocional.</p>
-                <p><strong>Resultado:</strong> +54% em pedidos e ticket médio 12% maior após 30 dias.</p>
-              </template>
-            </article>
-            <article class="gallery-card" role="listitem" data-category="embalagem">
-              <button class="gallery-trigger" type="button" data-modal="embalagem">
-                <img src="assets/portfolio-stories.svg" alt="Rótulos coloridos" loading="lazy" />
-                <div class="gallery-card-body">
-                  <h3>Rótulos VivaBem</h3>
-                  <p>Família de embalagens para linha saudável.</p>
-                </div>
-              </button>
-              <template id="modal-embalagem">
-                <h3>Rótulos VivaBem</h3>
-                <p class="modal-subtitle">Embalagens • 2022</p>
-                <p><strong>Desafio:</strong> Unificar comunicação visual de 8 produtos diferentes.</p>
-                <p><strong>Solução:</strong> Sistema modular de cores e ícones com foco em benefícios.</p>
-                <p><strong>Resultado:</strong> Produtos ganharam destaque em gôndola e ampliaram distribuição.</p>
-              </template>
-            </article>
-            <article class="gallery-card" role="listitem" data-category="identidade">
-              <button class="gallery-trigger" type="button" data-modal="identidade2">
-                <img src="assets/portfolio-feed.svg" alt="Kit de identidade" loading="lazy" />
-                <div class="gallery-card-body">
-                  <h3>Marca Elementar</h3>
-                  <p>Identidade completa com manual de uso.</p>
-                </div>
-              </button>
-              <template id="modal-identidade2">
-                <h3>Marca Elementar</h3>
-                <p class="modal-subtitle">Identidade Visual • 2023</p>
-                <p><strong>Desafio:</strong> Posicionar marca B2B com visual direto e memorável.</p>
-                <p><strong>Solução:</strong> Logotipo modular, grid flexível e assets personalizáveis.</p>
-                <p><strong>Resultado:</strong> Aumento de 30% no recall em pesquisa com clientes.</p>
-              </template>
-            </article>
-            <article class="gallery-card" role="listitem" data-category="social">
-              <button class="gallery-trigger" type="button" data-modal="social2">
-                <img src="assets/portfolio-banners.svg" alt="Posts para redes sociais" loading="lazy" />
-                <div class="gallery-card-body">
-                  <h3>Sprints de conteúdo</h3>
-                  <p>Trilhas de posts pensadas para lançamentos.</p>
-                </div>
-              </button>
-              <template id="modal-social2">
-                <h3>Sprints de conteúdo</h3>
-                <p class="modal-subtitle">Social Media • 2024</p>
-                <p><strong>Desafio:</strong> Sustentar três campanhas simultâneas sem perder consistência.</p>
-                <p><strong>Solução:</strong> Sistema de componentes e banco de layouts editáveis.</p>
-                <p><strong>Resultado:</strong> Equipe interna ganhou autonomia e reduziu tempo de produção em 40%.</p>
-              </template>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section id="servicos" class="section" aria-labelledby="services-title">
-        <div class="container services-page">
-          <header class="section-header">
-            <span class="eyebrow">Serviços sob medida</span>
-            <h2 id="services-title">Escolha o que faz sentido hoje</h2>
-            <p>Seis ofertas prontas para acelerar o design da sua marca.</p>
           </header>
           <div class="grid service-grid">
             <article class="service-card">
-              <div class="icon" aria-hidden="true">🎨</div>
+              <span class="service-icon">ID</span>
               <h3>Identidade Visual</h3>
-              <p>Logo, tipografia, paleta e guia para aplicar em todos os canais.</p>
-              <a class="link" href="#contato">Solicitar orçamento</a>
+              <p>Guia completo, logotipos, tipografia e aplicações consistentes.</p>
             </article>
             <article class="service-card">
-              <div class="icon" aria-hidden="true">📱</div>
+              <span class="service-icon">SM</span>
               <h3>Social Media</h3>
-              <p>Planejamento mensal com posts, stories e templates editáveis.</p>
-              <a class="link" href="#contato">Solicitar orçamento</a>
+              <p>Planejamento visual mensal e conteúdo pronto para publicar.</p>
             </article>
             <article class="service-card">
-              <div class="icon" aria-hidden="true">🍽️</div>
+              <span class="service-icon">IF</span>
               <h3>Melhorias iFood</h3>
-              <p>Fotos tratadas, descrições otimizadas e destaques promocionais.</p>
-              <a class="link" href="#contato">Solicitar orçamento</a>
+              <p>Fotos profissionais, descrições otimizada e layout convincente.</p>
             </article>
             <article class="service-card">
-              <div class="icon" aria-hidden="true">🖨️</div>
-              <h3>Materiais Gráficos</h3>
-              <p>Cardápios, folders, catálogos e apresentações para vendas.</p>
-              <a class="link" href="#contato">Solicitar orçamento</a>
+              <span class="service-icon">MB</span>
+              <h3>Materiais &amp; Embalagens</h3>
+              <p>Cardápios, rótulos e impressos com acabamento impecável.</p>
             </article>
-            <article class="service-card">
-              <div class="icon" aria-hidden="true">📦</div>
-              <h3>Embalagens & Rótulos</h3>
-              <p>Design funcional, alinhado às normas e com shelf impact.</p>
-              <a class="link" href="#contato">Solicitar orçamento</a>
-            </article>
-            <article class="service-card">
-              <div class="icon" aria-hidden="true">💡</div>
-              <h3>Consultoria</h3>
-              <p>Sessões estratégicas para organizar demandas e priorizar ações.</p>
-              <a class="link" href="#contato">Solicitar orçamento</a>
-            </article>
-          </div>
-          <div class="custom-service">
-            <div>
-              <h3>Não encontrou o que precisa?</h3>
-              <p>Conte sua demanda e montamos uma proposta sob medida.</p>
-            </div>
-            <a class="ghost-button" href="https://wa.me/5547999999999" target="_blank" rel="noopener">Falar sobre o projeto</a>
-          </div>
-          <div class="process">
-            <h3>Como conduzimos o projeto</h3>
-            <ol class="timeline">
-              <li>
-                <strong>Diagnóstico</strong>
-                <span>Conversamos sobre objetivos, prazos e materiais prioritários.</span>
-              </li>
-              <li>
-                <strong>Direção visual</strong>
-                <span>Apresentamos caminhos visuais com foco em resultado.</span>
-              </li>
-              <li>
-                <strong>Produção</strong>
-                <span>Aplicamos o visual em todos os formatos definidos.</span>
-              </li>
-              <li>
-                <strong>Entrega e suporte</strong>
-                <span>Arquivos organizados + acompanhamento para ajustes.</span>
-              </li>
-            </ol>
           </div>
         </div>
       </section>
 
-      <section id="ifood" class="section ifood" aria-labelledby="ifood-title">
-        <div class="container">
-          <header class="section-header">
-            <span class="eyebrow">Especial iFood</span>
-            <h2 id="ifood-title">Suas fotos estão tirando clientes?</h2>
-            <p>Transforme imagens comuns em pedidos irresistíveis em até 48h.</p>
-            <a class="button" href="https://wa.me/5547999999999" target="_blank" rel="noopener">Quero destacar meu cardápio</a>
-          </header>
-          <div class="before-after">
-            <div class="compare-card">
-              <div class="compare-wrapper">
-                <img src="assets/ifood-before.svg" alt="Foto antes do tratamento" loading="lazy" />
-                <img class="compare-after" src="assets/ifood-after.svg" alt="Foto depois do tratamento" loading="lazy" />
-                <input class="compare-slider" type="range" min="0" max="100" value="50" aria-label="Arraste para comparar" />
-              </div>
-            </div>
-            <div class="compare-card">
-              <div class="compare-wrapper">
-                <img src="assets/ifood-before-02.svg" alt="Foto antes do tratamento" loading="lazy" />
-                <img class="compare-after" src="assets/ifood-after-02.svg" alt="Foto depois do tratamento" loading="lazy" />
-                <input class="compare-slider" type="range" min="0" max="100" value="50" aria-label="Arraste para comparar" />
-              </div>
-            </div>
-            <div class="compare-card">
-              <div class="compare-wrapper">
-                <img src="assets/ifood-before-03.svg" alt="Foto antes do tratamento" loading="lazy" />
-                <img class="compare-after" src="assets/ifood-after-03.svg" alt="Foto depois do tratamento" loading="lazy" />
-                <input class="compare-slider" type="range" min="0" max="100" value="50" aria-label="Arraste para comparar" />
-              </div>
-            </div>
+      <section class="section cta-section">
+        <div class="container cta-card">
+          <div>
+            <h2>Pronto para destacar sua marca?</h2>
+            <p>Vamos construir juntos um visual direto ao ponto, sem ruído e com foco em resultado.</p>
           </div>
-          <div class="how-it-works">
-            <article>
-              <h3>1. Você envia as fotos</h3>
-              <p>Compartilhe pelo WhatsApp ou Drive. Enviamos um guia rápido de captura.</p>
-            </article>
-            <article>
-              <h3>2. Tratamento Brezer</h3>
-              <p>Edição profissional, recortes, mockups e legendas otimizadas.</p>
-            </article>
-            <article>
-              <h3>3. Entrega em 48h</h3>
-              <p>Arquivos prontos para iFood, redes sociais e promoções sazonais.</p>
-            </article>
-          </div>
-          <div class="testimonials">
-            <article class="depoimento">
-              <p>“Atualizamos fotos e descrições e as vendas cresceram na semana seguinte. Atendimento ágil e direto.”</p>
-              <span>⭐️⭐️⭐️⭐️⭐️ • Empório da Vila</span>
-            </article>
-            <article class="depoimento">
-              <p>“Processo simples, sem enrolação. Hoje conseguimos manter campanhas semanais com os materiais prontos.”</p>
-              <span>⭐️⭐️⭐️⭐️⭐️ • Bistrô Central</span>
-            </article>
-            <article class="depoimento">
-              <p>“As fotos ficaram muito mais vivas e a descrição dá vontade de pedir. Voltaremos para novos cardápios!”</p>
-              <span>⭐️⭐️⭐️⭐️⭐️ • Cozinha da Ju</span>
-            </article>
-          </div>
-          <div class="plans">
-            <article class="plan">
-              <h3>Básico</h3>
-              <p class="price">10 fotos</p>
-              <ul>
-                <li>Tratamento completo</li>
-                <li>Descrições revisadas</li>
-                <li>Arquivos otimizados</li>
-              </ul>
-              <a class="button" href="https://wa.me/5547999999999" target="_blank" rel="noopener">Quero esse</a>
-            </article>
-            <article class="plan">
-              <h3>Pro</h3>
-              <p class="price">20 fotos</p>
-              <ul>
-                <li>Tudo do Básico</li>
-                <li>Kit de stories promocionais</li>
-                <li>Relatório de melhorias</li>
-              </ul>
-              <a class="button" href="https://wa.me/5547999999999" target="_blank" rel="noopener">Fechar agora</a>
-            </article>
-            <article class="plan">
-              <h3>Completo</h3>
-              <p class="price">40 fotos</p>
-              <ul>
-                <li>Tudo do Pro</li>
-                <li>Vídeo teaser</li>
-                <li>Suporte mensal</li>
-              </ul>
-              <a class="button" href="https://wa.me/5547999999999" target="_blank" rel="noopener">Falar com o time</a>
-            </article>
-          </div>
-          <div class="faq">
-            <details>
-              <summary>Preciso de fotógrafo profissional?</summary>
-              <p>Não necessariamente. Indicamos ajustes de iluminação e enquadramento para aproveitar bem seu celular.</p>
-            </details>
-            <details>
-              <summary>Como funciona para outras plataformas?</summary>
-              <p>Entregamos versões otimizadas também para Instagram, anúncios e aplicativos parceiros.</p>
-            </details>
-            <details>
-              <summary>Vocês acompanham os resultados?</summary>
-              <p>Sim. Enviamos relatório após 30 dias com sugestões para manter o desempenho.</p>
-            </details>
-          </div>
-          <div class="cta-bar teal">
-            <div>
-              <h3>Quer virar referência no iFood?</h3>
-              <p>Vamos transformar o seu cardápio em uma vitrine que vende por você.</p>
-            </div>
-            <a class="ghost-button" href="https://wa.me/5547999999999" target="_blank" rel="noopener">Começar agora</a>
-          </div>
-        </div>
-      </section>
-
-      <section id="sobre" class="section" aria-labelledby="about-title">
-        <div class="container about">
-          <div class="about-photo" aria-hidden="true">
-            <strong>Studio Brezer</strong>
-            <span>Design sem ruído, feito para o dia a dia do seu negócio.</span>
-          </div>
-          <div class="about-copy">
-            <span class="eyebrow">Sobre</span>
-            <h2 id="about-title">Prazer, Bruna Brezer</h2>
-            <p>
-              Depois de anos dentro de agências, criei o Studio Brezer para aproximar o design da rotina de negócios locais. Aqui a conversa é direta, os projetos são enxutos e cada entrega tem um objetivo claro.
-            </p>
-            <div class="values">
-              <article>
-                <h3>Visão comercial</h3>
-                <p>Estratégias guiadas por dados e necessidades reais.</p>
-              </article>
-              <article>
-                <h3>Agilidade</h3>
-                <p>Prazos curtos, organização e entregas prontas para uso.</p>
-              </article>
-              <article>
-                <h3>Parceria</h3>
-                <p>Contato direto para ajustes, dúvidas e próximos passos.</p>
-              </article>
-            </div>
-            <div class="metrics">
-              <div>
-                <strong>80+</strong>
-                <span>Projetos entregues</span>
-              </div>
-              <div>
-                <strong>6</strong>
-                <span>Anos de experiência</span>
-              </div>
-              <div>
-                <strong>48h</strong>
-                <span>Entrega média iFood</span>
-              </div>
-            </div>
-            <a class="button" href="#contato">Vamos conversar</a>
-          </div>
-        </div>
-      </section>
-
-      <section id="contato" class="section" aria-labelledby="contact-title">
-        <div class="container contact">
-          <header class="section-header">
-            <span class="eyebrow">Contato</span>
-            <h2 id="contact-title">Vamos tirar seu projeto do papel?</h2>
-            <p>Respondo em até 24h úteis com uma proposta alinhada ao seu momento.</p>
-          </header>
-          <div class="contact-grid">
-            <form class="contact-form" aria-label="Formulário de contato">
-              <label>
-                Nome
-                <input type="text" name="nome" placeholder="Como podemos te chamar?" required />
-              </label>
-              <label>
-                E-mail
-                <input type="email" name="email" placeholder="nome@email.com" required />
-              </label>
-              <label>
-                WhatsApp
-                <input type="tel" name="whatsapp" placeholder="(00) 00000-0000" />
-              </label>
-              <label>
-                Serviço de interesse
-                <select name="servico" required>
-                  <option value="" disabled selected>Selecione</option>
-                  <option>Identidade visual</option>
-                  <option>Social media</option>
-                  <option>Melhorias iFood</option>
-                  <option>Materiais impressos</option>
-                  <option>Embalagens</option>
-                  <option>Consultoria</option>
-                  <option>Outro projeto</option>
-                </select>
-              </label>
-              <label>
-                Mensagem
-                <textarea name="mensagem" rows="4" placeholder="Conte rapidamente o que você precisa"></textarea>
-              </label>
-              <button class="button" type="submit">Enviar mensagem</button>
-            </form>
-            <aside class="contact-info">
-              <div>
-                <strong>E-mail</strong>
-                <p><a href="mailto:contato@studiobrezer.com">contato@studiobrezer.com</a></p>
-              </div>
-              <div>
-                <strong>WhatsApp</strong>
-                <p><a href="https://wa.me/5547999999999" target="_blank" rel="noopener">(47) 99999-9999</a></p>
-              </div>
-              <div>
-                <strong>Instagram</strong>
-                <p><a href="https://instagram.com/studiobrezer" target="_blank" rel="noopener">@studiobrezer</a></p>
-              </div>
-              <div>
-                <strong>Horário</strong>
-                <p>Segunda a sexta, 9h às 18h — atendimento online para todo o Brasil.</p>
-              </div>
-            </aside>
-          </div>
+          <a class="button" href="contato.html">Falar com o estúdio</a>
         </div>
       </section>
     </main>
 
     <footer class="site-footer">
       <div class="container footer-grid">
-        <div class="footer-brand">
-          <img src="assets/logo-brezer.svg" alt="Studio Brezer" width="44" height="44" />
-          <p>Portfólio que vende sem complicação.</p>
+        <div>
+          <a class="brand" href="index.html">
+            <img src="assets/logo-brezer.svg" alt="Studio Brezer" width="44" height="44" />
+            <span>Studio Brezer</span>
+          </a>
+          <p>Design limpo para marcas que querem vender mais.</p>
         </div>
-        <nav aria-label="Links rápidos">
-          <a href="#home">Home</a>
-          <a href="#portfolio">Portfólio</a>
-          <a href="#servicos">Serviços</a>
-          <a href="#ifood">iFood</a>
-          <a href="#sobre">Sobre</a>
-          <a href="#contato">Contato</a>
-        </nav>
-        <div class="footer-meta">
-          <p>© <span id="year"></span> Studio Brezer</p>
-          <a class="link" href="https://wa.me/5547999999999" target="_blank" rel="noopener">Chamar no WhatsApp</a>
+        <div>
+          <h3>Contato</h3>
+          <ul>
+            <li><a href="mailto:contato@studiobrezer.com">contato@studiobrezer.com</a></li>
+            <li><a href="https://wa.me/5500000000000" target="_blank" rel="noreferrer">WhatsApp direto</a></li>
+            <li><a href="https://instagram.com/studiobrezer" target="_blank" rel="noreferrer">Instagram</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Links</h3>
+          <ul>
+            <li><a href="portfolio.html">Portfólio</a></li>
+            <li><a href="servicos.html">Serviços</a></li>
+            <li><a href="ifood.html">Melhorias iFood</a></li>
+          </ul>
         </div>
       </div>
+      <p class="footer-copy">© <span id="year"></span> Studio Brezer. Todos os direitos reservados.</p>
     </footer>
-
-    <div class="modal" role="dialog" aria-modal="true" aria-hidden="true">
-      <div class="modal-backdrop" data-close="modal"></div>
-      <div class="modal-window" role="document">
-        <button class="modal-close" type="button" aria-label="Fechar">×</button>
-        <div class="modal-content"></div>
-      </div>
-    </div>
-
-    <a class="whatsapp" href="https://wa.me/5547999999999" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
-      WhatsApp
-    </a>
 
     <script src="app.js" defer></script>
   </body>

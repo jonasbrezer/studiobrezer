@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contato • Studio Brezer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="page-contato">
+    <header class="site-header">
+      <div class="container header-bar">
+        <a class="brand" href="index.html" aria-label="Studio Brezer">
+          <img src="assets/logo-brezer.svg" alt="Studio Brezer" width="44" height="44" />
+          <span>Studio Brezer</span>
+        </a>
+        <nav id="menu" class="menu" aria-label="Navegação principal">
+          <a class="menu-link" href="index.html">Home</a>
+          <a class="menu-link" href="portfolio.html">Portfólio</a>
+          <a class="menu-link" href="servicos.html">Serviços</a>
+          <a class="menu-link" href="ifood.html">iFood</a>
+          <a class="menu-link" href="sobre.html">Sobre</a>
+          <a class="menu-link active" href="contato.html" aria-current="page">Contato</a>
+        </nav>
+        <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero hero-contact">
+        <div class="container contact-grid">
+          <div class="hero-copy">
+            <span class="eyebrow">Contato</span>
+            <h1>Conte sobre seu projeto</h1>
+            <p class="lead">
+              Responderemos em até um dia útil com as próximas etapas e um diagnóstico rápido.
+            </p>
+            <div class="contact-info">
+              <a class="link" href="mailto:contato@studiobrezer.com">contato@studiobrezer.com</a>
+              <a class="link" href="https://wa.me/5500000000000" target="_blank" rel="noreferrer">WhatsApp direto</a>
+              <a class="link" href="https://instagram.com/studiobrezer" target="_blank" rel="noreferrer">Instagram</a>
+            </div>
+          </div>
+          <form class="card contact-form">
+            <h2>Formulário rápido</h2>
+            <label>
+              Nome completo
+              <input type="text" name="nome" placeholder="Como podemos te chamar?" required />
+            </label>
+            <label>
+              E-mail
+              <input type="email" name="email" placeholder="nome@email.com" required />
+            </label>
+            <label>
+              WhatsApp
+              <input type="tel" name="whatsapp" placeholder="(00) 00000-0000" required />
+            </label>
+            <label>
+              Serviço desejado
+              <select name="servico" required>
+                <option value="" disabled selected>Selecione uma opção</option>
+                <option value="identidade">Identidade Visual</option>
+                <option value="social">Social Media</option>
+                <option value="ifood">Melhorias iFood</option>
+                <option value="materiais">Materiais Gráficos</option>
+                <option value="consultoria">Consultoria</option>
+                <option value="outro">Outro</option>
+              </select>
+            </label>
+            <label>
+              Mensagem
+              <textarea name="mensagem" rows="4" placeholder="Conte um pouco sobre o momento da marca." required></textarea>
+            </label>
+            <button class="button" type="submit">Enviar mensagem</button>
+          </form>
+        </div>
+      </section>
+
+      <section class="section cta-section">
+        <div class="container cta-card">
+          <div>
+            <h2>Preferiu falar agora?</h2>
+            <p>Chame no WhatsApp e conversamos em tempo real sobre o que você precisa.</p>
+          </div>
+          <a class="button" href="https://wa.me/5500000000000" target="_blank" rel="noreferrer">Iniciar conversa</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <a class="brand" href="index.html">
+            <img src="assets/logo-brezer.svg" alt="Studio Brezer" width="44" height="44" />
+            <span>Studio Brezer</span>
+          </a>
+          <p>Design limpo para marcas que querem vender mais.</p>
+        </div>
+        <div>
+          <h3>Contato</h3>
+          <ul>
+            <li><a href="mailto:contato@studiobrezer.com">contato@studiobrezer.com</a></li>
+            <li><a href="https://wa.me/5500000000000" target="_blank" rel="noreferrer">WhatsApp direto</a></li>
+            <li><a href="https://instagram.com/studiobrezer" target="_blank" rel="noreferrer">Instagram</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Links</h3>
+          <ul>
+            <li><a href="portfolio.html">Portfólio</a></li>
+            <li><a href="servicos.html">Serviços</a></li>
+            <li><a href="ifood.html">Melhorias iFood</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="footer-copy">© <span id="year"></span> Studio Brezer. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="app.js" defer></script>
+  </body>
+</html>
