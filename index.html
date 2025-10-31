@@ -3,773 +3,505 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Studio Brezer • Design direto ao ponto</title>
+    <title>Studio Brezer • Portfólio que vende</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
-    <style>
-      :root {
-        --teal: #1a9b8e;
-        --teal-dark: #10796f;
-        --ink: #152222;
-        --soft-ink: #4f6363;
-        --surface: #f4f8f8;
-        --white: #ffffff;
-        --radius: 18px;
-        --shadow: 0 18px 36px rgba(16, 38, 38, 0.12);
-      }
-
-      *,
-      *::before,
-      *::after {
-        box-sizing: border-box;
-      }
-
-      body {
-        margin: 0;
-        font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-        color: var(--ink);
-        background: var(--surface);
-        line-height: 1.6;
-      }
-
-      img {
-        max-width: 100%;
-        display: block;
-        border-radius: var(--radius);
-      }
-
-      a {
-        text-decoration: none;
-        color: inherit;
-      }
-
-      h1,
-      h2,
-      h3 {
-        margin: 0 0 0.7rem;
-        line-height: 1.2;
-      }
-
-      p {
-        margin: 0 0 1rem;
-        color: var(--soft-ink);
-      }
-
-      .container {
-        width: min(1080px, 92vw);
-        margin: 0 auto;
-      }
-
-      header {
-        position: sticky;
-        top: 0;
-        z-index: 10;
-        backdrop-filter: blur(18px);
-        background: rgba(244, 248, 248, 0.92);
-        border-bottom: 1px solid rgba(21, 34, 34, 0.06);
-      }
-
-      .nav {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 1rem;
-        padding: 1rem 0;
-      }
-
-      .nav-logo {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.6rem;
-        font-weight: 600;
-      }
-
-      .nav-logo img {
-        height: 42px;
-      }
-
-      .nav-menu {
-        display: flex;
-        gap: 1.2rem;
-        font-weight: 500;
-        align-items: center;
-      }
-
-      .nav-menu a {
-        position: relative;
-        padding: 0.35rem 0;
-        color: var(--soft-ink);
-      }
-
-      .nav-menu a::after {
-        content: "";
-        position: absolute;
-        left: 0;
-        bottom: -0.25rem;
-        width: 100%;
-        height: 3px;
-        border-radius: 999px;
-        background: var(--teal);
-        transform: scaleX(0);
-        transform-origin: left;
-        transition: transform 0.3s ease;
-      }
-
-      .nav-menu a.active::after,
-      .nav-menu a:hover::after {
-        transform: scaleX(1);
-      }
-
-      .hamburger {
-        display: none;
-        background: none;
-        border: none;
-        cursor: pointer;
-        padding: 0.25rem;
-      }
-
-      .hamburger span,
-      .hamburger::before,
-      .hamburger::after {
-        content: "";
-        display: block;
-        width: 24px;
-        height: 2px;
-        margin: 5px 0;
-        background: var(--ink);
-        transition: transform 0.3s ease, opacity 0.3s ease;
-      }
-
-      .button {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        gap: 0.4rem;
-        padding: 0.85rem 1.8rem;
-        border-radius: 999px;
-        font-weight: 600;
-        background: var(--teal);
-        color: var(--white);
-        box-shadow: 0 18px 38px rgba(26, 155, 142, 0.2);
-        transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
-      }
-
-      .button:hover {
-        transform: translateY(-2px);
-        background: var(--teal-dark);
-        box-shadow: 0 22px 46px rgba(16, 94, 87, 0.28);
-      }
-
-      main {
-        display: flex;
-        flex-direction: column;
-        gap: 4.5rem;
-        padding-bottom: 4rem;
-      }
-
-      section {
-        scroll-margin-top: 120px;
-      }
-
-      .hero {
-        display: grid;
-        gap: 2.5rem;
-        padding: 5rem 0 3rem;
-        align-items: center;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      }
-
-      .hero h1 {
-        font-size: clamp(2.4rem, 6vw, 3.4rem);
-      }
-
-      .hero p {
-        font-size: 1.05rem;
-        max-width: 520px;
-      }
-
-      .hero-cta {
-        display: flex;
-        gap: 1rem;
-        flex-wrap: wrap;
-        align-items: center;
-      }
-
-      .tag {
-        display: inline-flex;
-        align-items: center;
-        padding: 0.35rem 0.9rem;
-        border-radius: 999px;
-        font-size: 0.78rem;
-        font-weight: 600;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-        background: rgba(26, 155, 142, 0.15);
-        color: var(--teal);
-      }
-
-      .grid {
-        display: grid;
-        gap: 1.6rem;
-      }
-
-      .grid-portfolio {
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      }
-
-      .card {
-        background: var(--white);
-        padding: 1.6rem;
-        border-radius: var(--radius);
-        box-shadow: var(--shadow);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-      }
-
-      .card:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 24px 48px rgba(16, 38, 38, 0.18);
-      }
-
-      .portfolio-item {
-        padding: 0;
-        overflow: hidden;
-      }
-
-      .portfolio-item figure {
-        margin: 0;
-      }
-
-      .portfolio-item figcaption {
-        padding: 1.2rem 1.4rem 1.6rem;
-      }
-
-      .services {
-        background: var(--white);
-        border-radius: 32px;
-        padding: 3rem;
-        box-shadow: var(--shadow);
-        display: grid;
-        gap: 2rem;
-      }
-
-      .services-list {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 1.2rem;
-      }
-
-      .service-item {
-        padding: 1.1rem 1.3rem;
-        border-radius: 14px;
-        background: var(--surface);
-        font-weight: 500;
-      }
-
-      .mini-cta {
-        background: var(--teal);
-        color: var(--white);
-        border-radius: 26px;
-        padding: 2.2rem 2.4rem;
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        gap: 1.2rem;
-        justify-content: space-between;
-      }
-
-      .mini-cta p {
-        color: rgba(255, 255, 255, 0.86);
-        margin: 0;
-      }
-
-      .ifood {
-        background: var(--white);
-        border-radius: 48px;
-        padding: 3.5rem 0;
-        box-shadow: var(--shadow);
-      }
-
-      .ifood > .container {
-        display: grid;
-        gap: 3rem;
-      }
-
-      .ifood-compare {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-        gap: 1.4rem;
-      }
-
-      .compare-card {
-        position: relative;
-        overflow: hidden;
-        border-radius: var(--radius);
-        background: #0f1414;
-        box-shadow: var(--shadow);
-        background: #0d1111;
-      }
-
-      .compare-wrapper {
-        position: relative;
-        width: 100%;
-        padding-top: 70%;
-      }
-
-      .compare-wrapper img {
-        position: absolute;
-        inset: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        border-radius: 0;
-      }
-
-      .compare-after {
-        clip-path: inset(0 0 0 calc(var(--pos, 50%) * 1%));
-        transition: clip-path 0.3s ease;
-      }
-
-      .compare-slider {
-        position: absolute;
-        left: 0;
-        right: 0;
-        bottom: 1rem;
-        width: 100%;
-        -webkit-appearance: none;
-        appearance: none;
-      }
-
-      .compare-slider::-webkit-slider-thumb {
-        -webkit-appearance: none;
-        appearance: none;
-        width: 18px;
-        height: 18px;
-        border-radius: 50%;
-        background: var(--teal);
-        border: none;
-        box-shadow: 0 0 0 4px rgba(26, 155, 142, 0.25);
-      }
-
-      .compare-slider::-webkit-slider-runnable-track {
-        height: 4px;
-        background: rgba(255, 255, 255, 0.6);
-      }
-
-      .ifood-cards {
-        display: grid;
-        gap: 1.2rem;
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      }
-
-      .ifood-card {
-        background: var(--surface);
-        border-radius: var(--radius);
-        padding: 1.6rem;
-        display: grid;
-        gap: 0.6rem;
-      }
-
-      .faq {
-        display: grid;
-        gap: 0.8rem;
-      }
-
-      .faq details {
-        background: var(--surface);
-        padding: 1.1rem 1.3rem;
-        border-radius: var(--radius);
-      }
-
-      .about {
-        display: grid;
-        gap: 2.4rem;
-        align-items: center;
-        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      }
-
-      .about-visual {
-        border-radius: 28px;
-        box-shadow: var(--shadow);
-        min-height: 320px;
-        background: radial-gradient(circle at 20% 20%, rgba(26, 155, 142, 0.18), transparent 60%),
-          linear-gradient(135deg, rgba(26, 155, 142, 0.95), rgba(16, 121, 111, 0.9));
-        color: rgba(255, 255, 255, 0.9);
-        display: grid;
-        align-content: end;
-        padding: 2.4rem;
-      }
-
-      .about-visual strong {
-        font-size: 2rem;
-        display: block;
-        margin-bottom: 0.4rem;
-      }
-
-      .values {
-        display: grid;
-        gap: 1rem;
-        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      }
-
-      .value {
-        background: var(--white);
-        border-radius: var(--radius);
-        padding: 1.2rem 1.4rem;
-        box-shadow: 0 12px 24px rgba(16, 38, 38, 0.08);
-      }
-
-      .contact {
-        display: grid;
-        gap: 2rem;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      }
-
-      form {
-        background: var(--white);
-        border-radius: var(--radius);
-        padding: 2rem;
-        box-shadow: var(--shadow);
-        display: grid;
-        gap: 1rem;
-      }
-
-      label {
-        display: grid;
-        gap: 0.3rem;
-        font-weight: 600;
-        font-size: 0.92rem;
-      }
-
-      input,
-      select,
-      textarea {
-        font: inherit;
-        padding: 0.8rem 1rem;
-        border-radius: 12px;
-        border: 1px solid rgba(21, 34, 34, 0.12);
-        background: #fbfdfd;
-        transition: border 0.3s ease, box-shadow 0.3s ease;
-        resize: vertical;
-      }
-
-      input:focus,
-      select:focus,
-      textarea:focus {
-        outline: none;
-        border-color: var(--teal);
-        box-shadow: 0 0 0 3px rgba(26, 155, 142, 0.2);
-      }
-
-      textarea {
-        min-height: 140px;
-      }
-
-      .contact-info {
-        display: grid;
-        gap: 1rem;
-      }
-
-      .contact-item {
-        background: var(--white);
-        border-radius: var(--radius);
-        padding: 1.3rem 1.5rem;
-        box-shadow: 0 12px 24px rgba(16, 38, 38, 0.08);
-      }
-
-      footer {
-        background: var(--white);
-        border-top: 1px solid rgba(21, 34, 34, 0.08);
-        margin-top: 4rem;
-        padding: 2.6rem 0 2rem;
-        text-align: center;
-      }
-
-      footer img {
-        height: 36px;
-        margin-bottom: 1rem;
-      }
-
-      footer p {
-        font-size: 0.9rem;
-        color: var(--soft-ink);
-      }
-
-      @media (max-width: 900px) {
-        .nav-menu {
-          position: fixed;
-          inset: 80px 18px auto;
-          background: var(--white);
-          border-radius: 18px;
-          padding: 1.4rem 1.6rem;
-          box-shadow: var(--shadow);
-          flex-direction: column;
-          gap: 1rem;
-          opacity: 0;
-          pointer-events: none;
-          transform: translateY(-10px);
-          transition: opacity 0.3s ease, transform 0.3s ease;
-        }
-
-        .nav-menu.open {
-          opacity: 1;
-          pointer-events: auto;
-          transform: translateY(0);
-        }
-
-        .hamburger {
-          display: block;
-        }
-
-        .hero,
-        .mini-cta {
-          text-align: center;
-          justify-content: center;
-        }
-
-        .hero-cta {
-          justify-content: center;
-        }
-
-        .services {
-          padding: 2.2rem;
-        }
-      }
-    </style>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <header>
-      <div class="container nav">
-        <a class="nav-logo" href="#home" aria-label="Studio Brezer">
-          <img src="assets/logo-brezer.svg" alt="Studio Brezer" loading="lazy" />
+    <header class="site-header" id="topo">
+      <div class="container header-bar">
+        <a class="brand" href="#home" aria-label="Studio Brezer">
+          <img src="assets/logo-brezer.svg" alt="Studio Brezer" width="44" height="44" />
           <span>Studio Brezer</span>
         </a>
-        <nav class="nav-menu" aria-label="Navegação principal">
-          <a href="#home" class="active">Home</a>
-          <a href="#portfolio">Portfólio</a>
-          <a href="#servicos">Serviços</a>
-          <a href="#ifood">iFood</a>
-          <a href="#sobre">Sobre</a>
-          <a href="#contato">Contato</a>
+        <nav id="menu" class="menu" aria-label="Navegação principal">
+          <a class="menu-link" href="#home">Home</a>
+          <a class="menu-link" href="#portfolio">Portfólio</a>
+          <a class="menu-link" href="#servicos">Serviços</a>
+          <a class="menu-link" href="#ifood">iFood</a>
+          <a class="menu-link" href="#sobre">Sobre</a>
+          <a class="menu-link" href="#contato">Contato</a>
         </nav>
-        <button class="hamburger" type="button" aria-label="Abrir menu">
+        <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false">
+          <span></span>
+          <span></span>
           <span></span>
         </button>
       </div>
     </header>
 
     <main>
-      <section id="home">
-        <div class="container hero">
-          <div>
-            <span class="tag">Design que vende</span>
-            <h1>Seu estúdio de confiança para marcas que querem clareza e resultado</h1>
-            <p>
-              Projetos enxutos, entregues com proximidade. Identidade, social media e cardápios otimizados para transformar visual em venda.
+      <section id="home" class="hero">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <span class="eyebrow">Design que vende</span>
+            <h1>Transformamos ideias em identidade visual, social media e cardápios que convertem.</h1>
+            <p class="lead">
+              O Studio Brezer entrega design direto ao ponto: clareza, consistência e materiais prontos para gerar resultado sem ruído.
             </p>
-            <div class="hero-cta">
+            <div class="hero-actions">
               <a class="button" href="#portfolio">Ver portfólio</a>
-              <a class="button" style="background: rgba(26, 155, 142, 0.12); color: var(--teal); box-shadow: none" href="#contato">Falar com o estúdio</a>
+              <a class="ghost-button" href="#contato">Falar com o estúdio</a>
             </div>
           </div>
-          <div class="card" style="background: var(--white);">
+          <div class="hero-highlight card">
             <h3>O que entregamos</h3>
-            <p>• Direção visual clara<br />• Materiais prontos para publicar<br />• Suporte próximo e sem burocracia</p>
+            <ul>
+              <li>Direção visual clara</li>
+              <li>Materiais prontos para publicar</li>
+              <li>Suporte próximo e sem burocracia</li>
+            </ul>
           </div>
         </div>
       </section>
 
-      <section id="portfolio">
+      <section class="section" aria-labelledby="portfolio-home-title">
         <div class="container">
-          <span class="tag">Portfólio</span>
-          <h2>Projetos favoritos</h2>
-          <p>Um recorte rápido de identidades, social media e cardápios que já estão gerando resultado.</p>
-          <div class="grid grid-portfolio">
-            <article class="card portfolio-item">
-              <figure>
-                <img src="assets/portfolio-feed.svg" alt="Prévia de feed social" loading="lazy" />
-                <figcaption>
-                  <h3>Social media direto ao ponto</h3>
-                  <p>Sequências prontas para calendário mensal com foco em CTA.</p>
-                </figcaption>
-              </figure>
-            </article>
-            <article class="card portfolio-item">
-              <figure>
-                <img src="assets/portfolio-banners.svg" alt="Materiais de campanha" loading="lazy" />
-                <figcaption>
-                  <h3>Campanhas e landing pages</h3>
-                  <p>Materiais para lançamentos rápidos mantendo consistência visual.</p>
-                </figcaption>
-              </figure>
-            </article>
-            <article class="card portfolio-item">
-              <figure>
-                <img src="assets/portfolio-stories.svg" alt="Stories promocionais" loading="lazy" />
-                <figcaption>
-                  <h3>Stories que convertem</h3>
-                  <p>Formatos curtos, claros e prontos para subir nos stories.</p>
-                </figcaption>
-              </figure>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section id="servicos">
-        <div class="container services">
-          <div>
-            <span class="tag">Serviços</span>
-            <h2>Escolha o que faz sentido hoje</h2>
-            <p>Cards objetivos para você entender rápido onde podemos ajudar. Orçamento sempre personalizado.</p>
-          </div>
-          <div class="services-list">
-            <div class="service-item">Identidade visual completa</div>
-            <div class="service-item">Social media mensal</div>
-            <div class="service-item">Melhorias iFood</div>
-            <div class="service-item">Materiais impressos</div>
-            <div class="service-item">Embalagens e rótulos</div>
-            <div class="service-item">Consultoria pontual</div>
-          </div>
-          <div class="mini-cta">
+          <header class="section-header">
+            <span class="eyebrow">Portfólio</span>
             <div>
-              <h3>Não achou o formato perfeito?</h3>
-              <p>Conta pra gente pelo WhatsApp e montamos algo sob medida.</p>
+              <h2 id="portfolio-home-title">Melhores projetos</h2>
+              <p>Um recorte rápido de identidades, social media e cardápios prontos para vender mais.</p>
             </div>
-            <a class="button" href="https://wa.me/5547999999999" target="_blank" rel="noopener">Chamar no WhatsApp</a>
+          </header>
+          <div class="grid projects-grid">
+            <article class="project-card">
+              <img src="assets/portfolio-feed.svg" alt="Feed social organizado" loading="lazy" />
+              <h3>Identidade visual com ritmo</h3>
+              <p>Direção visual e kit completo para lançar marca com consistência.</p>
+            </article>
+            <article class="project-card">
+              <img src="assets/portfolio-banners.svg" alt="Campanhas digitais" loading="lazy" />
+              <h3>Campanhas e landing pages</h3>
+              <p>Materiais de lançamento com copy e design alinhados à conversão.</p>
+            </article>
+            <article class="project-card">
+              <img src="assets/portfolio-stories.svg" alt="Stories promocionais" loading="lazy" />
+              <h3>Stories que convertem</h3>
+              <p>Sequências rápidas para CTA com métricas acima da média.</p>
+            </article>
+            <article class="project-card">
+              <img src="assets/portfolio-feed.svg" alt="Feed colorido" loading="lazy" />
+              <h3>Social media mensal</h3>
+              <p>Planejamento visual e textos curtos para rotinas puxadas.</p>
+            </article>
+            <article class="project-card">
+              <img src="assets/portfolio-banners.svg" alt="Materiais gráficos" loading="lazy" />
+              <h3>Materiais gráficos</h3>
+              <p>Cardápios, folhetos e impressos com acabamento impecável.</p>
+            </article>
+            <article class="project-card">
+              <img src="assets/portfolio-stories.svg" alt="Stories animados" loading="lazy" />
+              <h3>Embalagens e rótulos</h3>
+              <p>Design de embalagem alinhado ao posicionamento e às prateleiras.</p>
+            </article>
           </div>
         </div>
       </section>
 
-      <section id="ifood" class="ifood">
+      <section class="section" aria-labelledby="services-home-title">
         <div class="container">
-          <div>
-            <span class="tag">Especial iFood</span>
-            <h2>Transformamos suas fotos em pedidos em 48h</h2>
-            <p>Você envia os cliques, nós devolvemos imagens irresistíveis, descrições otimizadas e arquivos prontos para o app.</p>
-            <a class="button" href="https://wa.me/5547999999999" target="_blank" rel="noopener">Quero destacar meu cardápio</a>
-          </div>
-          <div>
-            <h3>Antes e depois</h3>
-            <div class="ifood-compare">
-              <div class="compare-card" aria-label="Comparativo iFood 1">
-                <div class="compare-wrapper">
-                  <img src="assets/ifood-before.svg" alt="Foto antes" loading="lazy" />
-                  <img class="compare-after" src="assets/ifood-after.svg" alt="Foto depois" loading="lazy" />
-                  <input class="compare-slider" type="range" min="0" max="100" value="50" aria-label="Arraste para comparar" />
-                </div>
-              </div>
-              <div class="compare-card" aria-label="Comparativo iFood 2">
-                <div class="compare-wrapper">
-                  <img src="assets/ifood-before-02.svg" alt="Foto antes" loading="lazy" />
-                  <img class="compare-after" src="assets/ifood-after-02.svg" alt="Foto depois" loading="lazy" />
-                  <input class="compare-slider" type="range" min="0" max="100" value="50" aria-label="Arraste para comparar" />
-                </div>
-              </div>
-              <div class="compare-card" aria-label="Comparativo iFood 3">
-                <div class="compare-wrapper">
-                  <img src="assets/ifood-before-03.svg" alt="Foto antes" loading="lazy" />
-                  <img class="compare-after" src="assets/ifood-after-03.svg" alt="Foto depois" loading="lazy" />
-                  <input class="compare-slider" type="range" min="0" max="100" value="50" aria-label="Arraste para comparar" />
-                </div>
-              </div>
+          <header class="section-header">
+            <span class="eyebrow">Serviços</span>
+            <div>
+              <h2 id="services-home-title">Principais entregas</h2>
+              <p>Escolha o formato certo e receba um plano visual claro para aplicar agora.</p>
             </div>
+          </header>
+          <div class="grid services-highlight">
+            <article class="service-pill">
+              <h3>Identidade visual</h3>
+              <p>Guia completo, aplicações e materiais de apoio.</p>
+            </article>
+            <article class="service-pill">
+              <h3>Social media</h3>
+              <p>Calendário mensal com posts, stories e copys prontos.</p>
+            </article>
+            <article class="service-pill">
+              <h3>Melhorias iFood</h3>
+              <p>Fotos, descrições e cardápio otimizados para o app.</p>
+            </article>
+            <article class="service-pill">
+              <h3>Materiais impressos</h3>
+              <p>Cardápios, embalagens e peças para PDV.</p>
+            </article>
           </div>
-          <div>
-            <h3>Como funciona</h3>
-            <div class="ifood-cards">
-              <div class="ifood-card">
-                <strong>1. Você envia as fotos</strong>
-                <p>Compartilhe as imagens por WhatsApp ou drive. Se preferir, guiamos a captura.</p>
-              </div>
-              <div class="ifood-card">
-                <strong>2. Tratamento Brezer</strong>
-                <p>Edição de cor, contraste e recorte pensados para gerar desejo imediato.</p>
-              </div>
-              <div class="ifood-card">
-                <strong>3. Entrega em 48h</strong>
-                <p>Arquivos otimizados para iFood, redes sociais e anúncios.</p>
-              </div>
+          <div class="cta-bar">
+            <div>
+              <h3>Pronto para destacar sua marca?</h3>
+              <p>Conte com um estúdio parceiro para tirar ideias do papel em poucas semanas.</p>
             </div>
-          </div>
-          <div>
-            <h3>Pacotes rápidos</h3>
-            <div class="ifood-cards">
-              <div class="ifood-card">
-                <strong>Básico</strong>
-                <p>10 fotos tratadas + ajustes de cor e recorte.</p>
-                <a class="button" href="https://wa.me/5547999999999" target="_blank" rel="noopener">Pedir orçamento</a>
-              </div>
-              <div class="ifood-card">
-                <strong>Pro</strong>
-                <p>20 fotos + templates para redes sociais.</p>
-                <a class="button" href="https://wa.me/5547999999999" target="_blank" rel="noopener">Quero esse</a>
-              </div>
-              <div class="ifood-card">
-                <strong>Completo</strong>
-                <p>40 fotos + vídeo teaser e suporte mensal.</p>
-                <a class="button" href="https://wa.me/5547999999999" target="_blank" rel="noopener">Falar com o time</a>
-              </div>
-            </div>
-          </div>
-          <div>
-            <h3>Dúvidas rápidas</h3>
-            <div class="faq">
-              <details>
-                <summary>Preciso enviar fotos profissionais?</summary>
-                <p>Não. Fotos de celular funcionam bem com boa luz. Passamos um guia rápido antes.</p>
-              </details>
-              <details>
-                <summary>Vocês atendem fora da região?</summary>
-                <p>Sim, trabalhamos online para todo o Brasil. Para produções presenciais, consulte disponibilidade.</p>
-              </details>
-              <details>
-                <summary>Consigo manter pacote recorrente?</summary>
-                <p>Temos planos mensais com atualização constante de cardápio e redes sociais.</p>
-              </details>
-            </div>
+            <a class="button" href="#contato">Quero começar</a>
           </div>
         </div>
       </section>
 
-      <section id="sobre">
+      <section id="portfolio" class="section" aria-labelledby="portfolio-title">
+        <div class="container">
+          <header class="section-header stack">
+            <div>
+              <span class="eyebrow">Portfólio completo</span>
+              <h2 id="portfolio-title">Projetos por categoria</h2>
+            </div>
+            <div class="filters" role="tablist" aria-label="Filtro de projetos">
+              <button class="filter-button active" type="button" data-filter="all" role="tab" aria-selected="true">Todos</button>
+              <button class="filter-button" type="button" data-filter="identidade" role="tab">Identidade Visual</button>
+              <button class="filter-button" type="button" data-filter="social" role="tab">Social Media</button>
+              <button class="filter-button" type="button" data-filter="embalagem" role="tab">Embalagens</button>
+              <button class="filter-button" type="button" data-filter="ifood" role="tab">iFood</button>
+            </div>
+          </header>
+          <div class="grid gallery" role="list">
+            <article class="gallery-card" role="listitem" data-category="identidade">
+              <button class="gallery-trigger" type="button" data-modal="identidade">
+                <img src="assets/portfolio-feed.svg" alt="Identidade visual Studio Flora" loading="lazy" />
+                <div class="gallery-card-body">
+                  <h3>Studio Flora</h3>
+                  <p>Rebranding completo para empresa de paisagismo.</p>
+                </div>
+              </button>
+              <template id="modal-identidade">
+                <h3>Studio Flora</h3>
+                <p class="modal-subtitle">Identidade Visual • 2024</p>
+                <p><strong>Desafio:</strong> Atualizar a comunicação visual mantendo a essência artesanal.</p>
+                <p><strong>Solução:</strong> Sistema tipográfico orgânico, paleta botânica e guia de aplicações.</p>
+                <p><strong>Resultado:</strong> +38% em pedidos de orçamento no trimestre seguinte ao lançamento.</p>
+              </template>
+            </article>
+            <article class="gallery-card" role="listitem" data-category="social">
+              <button class="gallery-trigger" type="button" data-modal="social">
+                <img src="assets/portfolio-banners.svg" alt="Campanha digital para lançamento" loading="lazy" />
+                <div class="gallery-card-body">
+                  <h3>Campanha Blitz</h3>
+                  <p>Sequência de lançamentos com foco em conversão.</p>
+                </div>
+              </button>
+              <template id="modal-social">
+                <h3>Campanha Blitz</h3>
+                <p class="modal-subtitle">Social Media • 2023</p>
+                <p><strong>Desafio:</strong> Criar campanha ágil para captar leads em 15 dias.</p>
+                <p><strong>Solução:</strong> Landing page + kit de stories e anúncios otimizados.</p>
+                <p><strong>Resultado:</strong> 2,4x mais cadastros com o mesmo investimento em mídia.</p>
+              </template>
+            </article>
+            <article class="gallery-card" role="listitem" data-category="ifood">
+              <button class="gallery-trigger" type="button" data-modal="ifood">
+                <img src="assets/ifood-after.svg" alt="Cardápio otimizado para iFood" loading="lazy" />
+                <div class="gallery-card-body">
+                  <h3>Cardápio Gourmand</h3>
+                  <p>Tratamento de fotos e revisão de descrições.</p>
+                </div>
+              </button>
+              <template id="modal-ifood">
+                <h3>Cardápio Gourmand</h3>
+                <p class="modal-subtitle">Melhorias iFood • 2024</p>
+                <p><strong>Desafio:</strong> Imagens escuras e descrições confusas derrubavam os pedidos.</p>
+                <p><strong>Solução:</strong> Tratamento profissional, novos destaques e kit promocional.</p>
+                <p><strong>Resultado:</strong> +54% em pedidos e ticket médio 12% maior após 30 dias.</p>
+              </template>
+            </article>
+            <article class="gallery-card" role="listitem" data-category="embalagem">
+              <button class="gallery-trigger" type="button" data-modal="embalagem">
+                <img src="assets/portfolio-stories.svg" alt="Rótulos coloridos" loading="lazy" />
+                <div class="gallery-card-body">
+                  <h3>Rótulos VivaBem</h3>
+                  <p>Família de embalagens para linha saudável.</p>
+                </div>
+              </button>
+              <template id="modal-embalagem">
+                <h3>Rótulos VivaBem</h3>
+                <p class="modal-subtitle">Embalagens • 2022</p>
+                <p><strong>Desafio:</strong> Unificar comunicação visual de 8 produtos diferentes.</p>
+                <p><strong>Solução:</strong> Sistema modular de cores e ícones com foco em benefícios.</p>
+                <p><strong>Resultado:</strong> Produtos ganharam destaque em gôndola e ampliaram distribuição.</p>
+              </template>
+            </article>
+            <article class="gallery-card" role="listitem" data-category="identidade">
+              <button class="gallery-trigger" type="button" data-modal="identidade2">
+                <img src="assets/portfolio-feed.svg" alt="Kit de identidade" loading="lazy" />
+                <div class="gallery-card-body">
+                  <h3>Marca Elementar</h3>
+                  <p>Identidade completa com manual de uso.</p>
+                </div>
+              </button>
+              <template id="modal-identidade2">
+                <h3>Marca Elementar</h3>
+                <p class="modal-subtitle">Identidade Visual • 2023</p>
+                <p><strong>Desafio:</strong> Posicionar marca B2B com visual direto e memorável.</p>
+                <p><strong>Solução:</strong> Logotipo modular, grid flexível e assets personalizáveis.</p>
+                <p><strong>Resultado:</strong> Aumento de 30% no recall em pesquisa com clientes.</p>
+              </template>
+            </article>
+            <article class="gallery-card" role="listitem" data-category="social">
+              <button class="gallery-trigger" type="button" data-modal="social2">
+                <img src="assets/portfolio-banners.svg" alt="Posts para redes sociais" loading="lazy" />
+                <div class="gallery-card-body">
+                  <h3>Sprints de conteúdo</h3>
+                  <p>Trilhas de posts pensadas para lançamentos.</p>
+                </div>
+              </button>
+              <template id="modal-social2">
+                <h3>Sprints de conteúdo</h3>
+                <p class="modal-subtitle">Social Media • 2024</p>
+                <p><strong>Desafio:</strong> Sustentar três campanhas simultâneas sem perder consistência.</p>
+                <p><strong>Solução:</strong> Sistema de componentes e banco de layouts editáveis.</p>
+                <p><strong>Resultado:</strong> Equipe interna ganhou autonomia e reduziu tempo de produção em 40%.</p>
+              </template>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="servicos" class="section" aria-labelledby="services-title">
+        <div class="container services-page">
+          <header class="section-header">
+            <span class="eyebrow">Serviços sob medida</span>
+            <h2 id="services-title">Escolha o que faz sentido hoje</h2>
+            <p>Seis ofertas prontas para acelerar o design da sua marca.</p>
+          </header>
+          <div class="grid service-grid">
+            <article class="service-card">
+              <div class="icon" aria-hidden="true">🎨</div>
+              <h3>Identidade Visual</h3>
+              <p>Logo, tipografia, paleta e guia para aplicar em todos os canais.</p>
+              <a class="link" href="#contato">Solicitar orçamento</a>
+            </article>
+            <article class="service-card">
+              <div class="icon" aria-hidden="true">📱</div>
+              <h3>Social Media</h3>
+              <p>Planejamento mensal com posts, stories e templates editáveis.</p>
+              <a class="link" href="#contato">Solicitar orçamento</a>
+            </article>
+            <article class="service-card">
+              <div class="icon" aria-hidden="true">🍽️</div>
+              <h3>Melhorias iFood</h3>
+              <p>Fotos tratadas, descrições otimizadas e destaques promocionais.</p>
+              <a class="link" href="#contato">Solicitar orçamento</a>
+            </article>
+            <article class="service-card">
+              <div class="icon" aria-hidden="true">🖨️</div>
+              <h3>Materiais Gráficos</h3>
+              <p>Cardápios, folders, catálogos e apresentações para vendas.</p>
+              <a class="link" href="#contato">Solicitar orçamento</a>
+            </article>
+            <article class="service-card">
+              <div class="icon" aria-hidden="true">📦</div>
+              <h3>Embalagens & Rótulos</h3>
+              <p>Design funcional, alinhado às normas e com shelf impact.</p>
+              <a class="link" href="#contato">Solicitar orçamento</a>
+            </article>
+            <article class="service-card">
+              <div class="icon" aria-hidden="true">💡</div>
+              <h3>Consultoria</h3>
+              <p>Sessões estratégicas para organizar demandas e priorizar ações.</p>
+              <a class="link" href="#contato">Solicitar orçamento</a>
+            </article>
+          </div>
+          <div class="custom-service">
+            <div>
+              <h3>Não encontrou o que precisa?</h3>
+              <p>Conte sua demanda e montamos uma proposta sob medida.</p>
+            </div>
+            <a class="ghost-button" href="https://wa.me/5547999999999" target="_blank" rel="noopener">Falar sobre o projeto</a>
+          </div>
+          <div class="process">
+            <h3>Como conduzimos o projeto</h3>
+            <ol class="timeline">
+              <li>
+                <strong>Diagnóstico</strong>
+                <span>Conversamos sobre objetivos, prazos e materiais prioritários.</span>
+              </li>
+              <li>
+                <strong>Direção visual</strong>
+                <span>Apresentamos caminhos visuais com foco em resultado.</span>
+              </li>
+              <li>
+                <strong>Produção</strong>
+                <span>Aplicamos o visual em todos os formatos definidos.</span>
+              </li>
+              <li>
+                <strong>Entrega e suporte</strong>
+                <span>Arquivos organizados + acompanhamento para ajustes.</span>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      <section id="ifood" class="section ifood" aria-labelledby="ifood-title">
+        <div class="container">
+          <header class="section-header">
+            <span class="eyebrow">Especial iFood</span>
+            <h2 id="ifood-title">Suas fotos estão tirando clientes?</h2>
+            <p>Transforme imagens comuns em pedidos irresistíveis em até 48h.</p>
+            <a class="button" href="https://wa.me/5547999999999" target="_blank" rel="noopener">Quero destacar meu cardápio</a>
+          </header>
+          <div class="before-after">
+            <div class="compare-card">
+              <div class="compare-wrapper">
+                <img src="assets/ifood-before.svg" alt="Foto antes do tratamento" loading="lazy" />
+                <img class="compare-after" src="assets/ifood-after.svg" alt="Foto depois do tratamento" loading="lazy" />
+                <input class="compare-slider" type="range" min="0" max="100" value="50" aria-label="Arraste para comparar" />
+              </div>
+            </div>
+            <div class="compare-card">
+              <div class="compare-wrapper">
+                <img src="assets/ifood-before-02.svg" alt="Foto antes do tratamento" loading="lazy" />
+                <img class="compare-after" src="assets/ifood-after-02.svg" alt="Foto depois do tratamento" loading="lazy" />
+                <input class="compare-slider" type="range" min="0" max="100" value="50" aria-label="Arraste para comparar" />
+              </div>
+            </div>
+            <div class="compare-card">
+              <div class="compare-wrapper">
+                <img src="assets/ifood-before-03.svg" alt="Foto antes do tratamento" loading="lazy" />
+                <img class="compare-after" src="assets/ifood-after-03.svg" alt="Foto depois do tratamento" loading="lazy" />
+                <input class="compare-slider" type="range" min="0" max="100" value="50" aria-label="Arraste para comparar" />
+              </div>
+            </div>
+          </div>
+          <div class="how-it-works">
+            <article>
+              <h3>1. Você envia as fotos</h3>
+              <p>Compartilhe pelo WhatsApp ou Drive. Enviamos um guia rápido de captura.</p>
+            </article>
+            <article>
+              <h3>2. Tratamento Brezer</h3>
+              <p>Edição profissional, recortes, mockups e legendas otimizadas.</p>
+            </article>
+            <article>
+              <h3>3. Entrega em 48h</h3>
+              <p>Arquivos prontos para iFood, redes sociais e promoções sazonais.</p>
+            </article>
+          </div>
+          <div class="testimonials">
+            <article class="depoimento">
+              <p>“Atualizamos fotos e descrições e as vendas cresceram na semana seguinte. Atendimento ágil e direto.”</p>
+              <span>⭐️⭐️⭐️⭐️⭐️ • Empório da Vila</span>
+            </article>
+            <article class="depoimento">
+              <p>“Processo simples, sem enrolação. Hoje conseguimos manter campanhas semanais com os materiais prontos.”</p>
+              <span>⭐️⭐️⭐️⭐️⭐️ • Bistrô Central</span>
+            </article>
+            <article class="depoimento">
+              <p>“As fotos ficaram muito mais vivas e a descrição dá vontade de pedir. Voltaremos para novos cardápios!”</p>
+              <span>⭐️⭐️⭐️⭐️⭐️ • Cozinha da Ju</span>
+            </article>
+          </div>
+          <div class="plans">
+            <article class="plan">
+              <h3>Básico</h3>
+              <p class="price">10 fotos</p>
+              <ul>
+                <li>Tratamento completo</li>
+                <li>Descrições revisadas</li>
+                <li>Arquivos otimizados</li>
+              </ul>
+              <a class="button" href="https://wa.me/5547999999999" target="_blank" rel="noopener">Quero esse</a>
+            </article>
+            <article class="plan">
+              <h3>Pro</h3>
+              <p class="price">20 fotos</p>
+              <ul>
+                <li>Tudo do Básico</li>
+                <li>Kit de stories promocionais</li>
+                <li>Relatório de melhorias</li>
+              </ul>
+              <a class="button" href="https://wa.me/5547999999999" target="_blank" rel="noopener">Fechar agora</a>
+            </article>
+            <article class="plan">
+              <h3>Completo</h3>
+              <p class="price">40 fotos</p>
+              <ul>
+                <li>Tudo do Pro</li>
+                <li>Vídeo teaser</li>
+                <li>Suporte mensal</li>
+              </ul>
+              <a class="button" href="https://wa.me/5547999999999" target="_blank" rel="noopener">Falar com o time</a>
+            </article>
+          </div>
+          <div class="faq">
+            <details>
+              <summary>Preciso de fotógrafo profissional?</summary>
+              <p>Não necessariamente. Indicamos ajustes de iluminação e enquadramento para aproveitar bem seu celular.</p>
+            </details>
+            <details>
+              <summary>Como funciona para outras plataformas?</summary>
+              <p>Entregamos versões otimizadas também para Instagram, anúncios e aplicativos parceiros.</p>
+            </details>
+            <details>
+              <summary>Vocês acompanham os resultados?</summary>
+              <p>Sim. Enviamos relatório após 30 dias com sugestões para manter o desempenho.</p>
+            </details>
+          </div>
+          <div class="cta-bar teal">
+            <div>
+              <h3>Quer virar referência no iFood?</h3>
+              <p>Vamos transformar o seu cardápio em uma vitrine que vende por você.</p>
+            </div>
+            <a class="ghost-button" href="https://wa.me/5547999999999" target="_blank" rel="noopener">Começar agora</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="sobre" class="section" aria-labelledby="about-title">
         <div class="container about">
-          <div class="about-visual">
+          <div class="about-photo" aria-hidden="true">
             <strong>Studio Brezer</strong>
             <span>Design sem ruído, feito para o dia a dia do seu negócio.</span>
           </div>
-          <div>
-            <span class="tag">Sobre</span>
-            <h2>Prazer, Bruna Brezer</h2>
+          <div class="about-copy">
+            <span class="eyebrow">Sobre</span>
+            <h2 id="about-title">Prazer, Bruna Brezer</h2>
             <p>
-              Depois de anos em agência, criei o Studio Brezer para aproximar o design da rotina de negócios locais. Aqui a conversa é direta e cada entrega tem
-              objetivo claro.
+              Depois de anos dentro de agências, criei o Studio Brezer para aproximar o design da rotina de negócios locais. Aqui a conversa é direta, os projetos são enxutos e cada entrega tem um objetivo claro.
             </p>
             <div class="values">
-              <div class="value">
-                <strong>Visão comercial</strong>
-                <p>Decisões pautadas em métricas e necessidade real do cliente.</p>
-              </div>
-              <div class="value">
-                <strong>Agilidade</strong>
-                <p>Prazos enxutos, organização e arquivos prontos para uso imediato.</p>
-              </div>
-              <div class="value">
-                <strong>Parceria</strong>
+              <article>
+                <h3>Visão comercial</h3>
+                <p>Estratégias guiadas por dados e necessidades reais.</p>
+              </article>
+              <article>
+                <h3>Agilidade</h3>
+                <p>Prazos curtos, organização e entregas prontas para uso.</p>
+              </article>
+              <article>
+                <h3>Parceria</h3>
                 <p>Contato direto para ajustes, dúvidas e próximos passos.</p>
+              </article>
+            </div>
+            <div class="metrics">
+              <div>
+                <strong>80+</strong>
+                <span>Projetos entregues</span>
+              </div>
+              <div>
+                <strong>6</strong>
+                <span>Anos de experiência</span>
+              </div>
+              <div>
+                <strong>48h</strong>
+                <span>Entrega média iFood</span>
               </div>
             </div>
+            <a class="button" href="#contato">Vamos conversar</a>
           </div>
         </div>
       </section>
 
-      <section id="contato">
-        <div class="container">
-          <span class="tag">Contato</span>
-          <h2>Vamos tirar seu projeto do papel?</h2>
-          <p>Respondo em até 24h úteis com proposta alinhada ao que você precisa.</p>
-          <div class="contact">
-            <form>
+      <section id="contato" class="section" aria-labelledby="contact-title">
+        <div class="container contact">
+          <header class="section-header">
+            <span class="eyebrow">Contato</span>
+            <h2 id="contact-title">Vamos tirar seu projeto do papel?</h2>
+            <p>Respondo em até 24h úteis com uma proposta alinhada ao seu momento.</p>
+          </header>
+          <div class="contact-grid">
+            <form class="contact-form" aria-label="Formulário de contato">
               <label>
                 Nome
                 <input type="text" name="nome" placeholder="Como podemos te chamar?" required />
@@ -797,83 +529,66 @@
               </label>
               <label>
                 Mensagem
-                <textarea name="mensagem" placeholder="Conte rapidamente o que precisa"></textarea>
+                <textarea name="mensagem" rows="4" placeholder="Conte rapidamente o que você precisa"></textarea>
               </label>
               <button class="button" type="submit">Enviar mensagem</button>
             </form>
-            <div class="contact-info">
-              <div class="contact-item">
+            <aside class="contact-info">
+              <div>
                 <strong>E-mail</strong>
                 <p><a href="mailto:contato@studiobrezer.com">contato@studiobrezer.com</a></p>
               </div>
-              <div class="contact-item">
+              <div>
                 <strong>WhatsApp</strong>
                 <p><a href="https://wa.me/5547999999999" target="_blank" rel="noopener">(47) 99999-9999</a></p>
               </div>
-              <div class="contact-item">
+              <div>
                 <strong>Instagram</strong>
                 <p><a href="https://instagram.com/studiobrezer" target="_blank" rel="noopener">@studiobrezer</a></p>
               </div>
-              <div class="contact-item">
+              <div>
                 <strong>Horário</strong>
                 <p>Segunda a sexta, 9h às 18h — atendimento online para todo o Brasil.</p>
               </div>
-            </div>
+            </aside>
           </div>
         </div>
       </section>
     </main>
 
-    <footer>
-      <div class="container">
-        <img src="assets/logo-brezer.svg" alt="Studio Brezer" loading="lazy" />
-        <p>© <span id="year"></span> Studio Brezer — portfólio que vende sem complicação.</p>
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <img src="assets/logo-brezer.svg" alt="Studio Brezer" width="44" height="44" />
+          <p>Portfólio que vende sem complicação.</p>
+        </div>
+        <nav aria-label="Links rápidos">
+          <a href="#home">Home</a>
+          <a href="#portfolio">Portfólio</a>
+          <a href="#servicos">Serviços</a>
+          <a href="#ifood">iFood</a>
+          <a href="#sobre">Sobre</a>
+          <a href="#contato">Contato</a>
+        </nav>
+        <div class="footer-meta">
+          <p>© <span id="year"></span> Studio Brezer</p>
+          <a class="link" href="https://wa.me/5547999999999" target="_blank" rel="noopener">Chamar no WhatsApp</a>
+        </div>
       </div>
     </footer>
 
-    <script>
-      const navMenu = document.querySelector('.nav-menu');
-      const navLinks = document.querySelectorAll('.nav-menu a');
-      const hamburger = document.querySelector('.hamburger');
-      const compareSliders = document.querySelectorAll('.compare-slider');
+    <div class="modal" role="dialog" aria-modal="true" aria-hidden="true">
+      <div class="modal-backdrop" data-close="modal"></div>
+      <div class="modal-window" role="document">
+        <button class="modal-close" type="button" aria-label="Fechar">×</button>
+        <div class="modal-content"></div>
+      </div>
+    </div>
 
-      document.getElementById('year').textContent = new Date().getFullYear();
+    <a class="whatsapp" href="https://wa.me/5547999999999" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+      WhatsApp
+    </a>
 
-      const toggleMenu = () => {
-        navMenu.classList.toggle('open');
-        hamburger.classList.toggle('open');
-      };
-
-      hamburger.addEventListener('click', toggleMenu);
-
-      navLinks.forEach((link) => {
-        link.addEventListener('click', () => {
-          navLinks.forEach((item) => item.classList.remove('active'));
-          link.classList.add('active');
-          navMenu.classList.remove('open');
-          hamburger.classList.remove('open');
-        });
-      });
-
-      window.addEventListener('scroll', () => {
-        const fromTop = window.scrollY + 120;
-        navLinks.forEach((link) => {
-          const section = document.querySelector(link.getAttribute('href'));
-          if (!section) return;
-          if (section.offsetTop <= fromTop && section.offsetTop + section.offsetHeight > fromTop) {
-            navLinks.forEach((item) => item.classList.remove('active'));
-            link.classList.add('active');
-          }
-        });
-      });
-
-      compareSliders.forEach((slider) => {
-        const wrapper = slider.closest('.compare-wrapper');
-        const afterImg = wrapper.querySelector('.compare-after');
-        slider.addEventListener('input', () => {
-          afterImg.style.setProperty('--pos', slider.value);
-        });
-      });
-    </script>
+    <script src="app.js" defer></script>
   </body>
 </html>
