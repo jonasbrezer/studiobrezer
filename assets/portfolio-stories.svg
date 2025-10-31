@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 900">
+  <defs>
+    <linearGradient id="storiesBg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffe7f4" />
+      <stop offset="100%" stop-color="#cde9ff" />
+    </linearGradient>
+  </defs>
+  <rect width="900" height="900" rx="80" fill="url(#storiesBg)" />
+  <g stroke="#ffffff" stroke-width="18" fill="none" opacity="0.55">
+    <rect x="120" y="160" width="200" height="540" rx="48" />
+    <rect x="350" y="160" width="200" height="540" rx="48" />
+    <rect x="580" y="160" width="200" height="540" rx="48" />
+  </g>
+  <g fill="#1a4f63" font-family="'Poppins', sans-serif" text-anchor="middle">
+    <text x="220" y="300" font-size="46" font-weight="600">Stories</text>
+    <text x="450" y="300" font-size="46" font-weight="600">Anúncios</text>
+    <text x="680" y="300" font-size="46" font-weight="600">Promoções</text>
+    <text x="220" y="380" font-size="30">Chamada direta</text>
+    <text x="220" y="430" font-size="30">para ação</text>
+    <text x="450" y="380" font-size="30">Narrativa</text>
+    <text x="450" y="430" font-size="30">envolvente</text>
+    <text x="680" y="380" font-size="30">Ofertas com</text>
+    <text x="680" y="430" font-size="30">urgência</text>
+  </g>
+</svg>

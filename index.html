@@ -3,36 +3,33 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Studio Brezer • Design que vende</title>
+    <title>Studio Brezer • Design direto ao ponto</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <style>
       :root {
         --teal: #1a9b8e;
-        --teal-dark: #11756b;
-        --dark: #101414;
-        --mid: #1f2a2a;
-        --light: #ffffff;
-        --muted: #7f8d8d;
-        --soft-gray: #f2f5f5;
-        --shadow: 0 18px 36px rgba(16, 20, 20, 0.08);
-        --radius: 12px;
+        --teal-dark: #10796f;
+        --ink: #152222;
+        --soft-ink: #4f6363;
+        --surface: #f4f8f8;
+        --white: #ffffff;
+        --radius: 18px;
+        --shadow: 0 18px 36px rgba(16, 38, 38, 0.12);
       }
 
-      * {
+      *,
+      *::before,
+      *::after {
         box-sizing: border-box;
       }
 
-      html {
-        scroll-behavior: smooth;
-      }
-
       body {
-        font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
         margin: 0;
-        color: var(--dark);
-        background: #f8fbfb;
+        font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        color: var(--ink);
+        background: var(--surface);
         line-height: 1.6;
       }
 
@@ -49,144 +46,147 @@
 
       h1,
       h2,
-      h3,
-      h4 {
-        color: var(--dark);
-        margin: 0 0 0.75rem;
+      h3 {
+        margin: 0 0 0.7rem;
         line-height: 1.2;
       }
 
       p {
         margin: 0 0 1rem;
-        color: var(--muted);
+        color: var(--soft-ink);
       }
 
       .container {
-        width: min(1160px, 92vw);
+        width: min(1080px, 92vw);
         margin: 0 auto;
       }
 
-      .button {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        gap: 0.5rem;
-        background: var(--teal);
-        color: var(--light);
-        padding: 0.9rem 1.8rem;
-        border-radius: 999px;
-        font-weight: 600;
-        transition: all 0.3s ease;
-        box-shadow: 0 14px 30px rgba(26, 155, 142, 0.24);
-      }
-
-      .button:hover {
-        transform: translateY(-2px);
-        background: var(--teal-dark);
-        box-shadow: 0 18px 36px rgba(17, 117, 107, 0.32);
-      }
-
-      /* Navigation */
       header {
         position: sticky;
         top: 0;
-        z-index: 999;
+        z-index: 10;
         backdrop-filter: blur(18px);
-        background: rgba(248, 251, 251, 0.88);
-        border-bottom: 1px solid rgba(31, 42, 42, 0.05);
+        background: rgba(244, 248, 248, 0.92);
+        border-bottom: 1px solid rgba(21, 34, 34, 0.06);
       }
 
       .nav {
         display: flex;
         align-items: center;
         justify-content: space-between;
+        gap: 1rem;
         padding: 1rem 0;
       }
 
       .nav-logo {
-        display: flex;
+        display: inline-flex;
         align-items: center;
-        gap: 0.75rem;
+        gap: 0.6rem;
+        font-weight: 600;
       }
 
       .nav-logo img {
-        height: 46px;
-        width: auto;
-        border-radius: 8px;
+        height: 42px;
       }
 
       .nav-menu {
         display: flex;
-        gap: 1.5rem;
-        align-items: center;
+        gap: 1.2rem;
         font-weight: 500;
+        align-items: center;
       }
 
       .nav-menu a {
-        color: var(--mid);
         position: relative;
         padding: 0.35rem 0;
+        color: var(--soft-ink);
       }
 
       .nav-menu a::after {
         content: "";
         position: absolute;
         left: 0;
-        bottom: 0;
-        height: 3px;
+        bottom: -0.25rem;
         width: 100%;
-        border-radius: 99px;
+        height: 3px;
+        border-radius: 999px;
         background: var(--teal);
         transform: scaleX(0);
         transform-origin: left;
         transition: transform 0.3s ease;
       }
 
-      .nav-menu a:hover::after,
-      .nav-menu a.active::after {
+      .nav-menu a.active::after,
+      .nav-menu a:hover::after {
         transform: scaleX(1);
-      }
-
-      .nav-actions {
-        display: flex;
-        align-items: center;
-        gap: 0.75rem;
       }
 
       .hamburger {
         display: none;
         background: none;
         border: none;
-        padding: 0.25rem;
         cursor: pointer;
+        padding: 0.25rem;
       }
 
       .hamburger span,
       .hamburger::before,
       .hamburger::after {
+        content: "";
         display: block;
-        width: 26px;
+        width: 24px;
         height: 2px;
-        background: var(--dark);
-        margin: 6px 0;
+        margin: 5px 0;
+        background: var(--ink);
         transition: transform 0.3s ease, opacity 0.3s ease;
       }
 
-      /* Hero */
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.4rem;
+        padding: 0.85rem 1.8rem;
+        border-radius: 999px;
+        font-weight: 600;
+        background: var(--teal);
+        color: var(--white);
+        box-shadow: 0 18px 38px rgba(26, 155, 142, 0.2);
+        transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+      }
+
+      .button:hover {
+        transform: translateY(-2px);
+        background: var(--teal-dark);
+        box-shadow: 0 22px 46px rgba(16, 94, 87, 0.28);
+      }
+
+      main {
+        display: flex;
+        flex-direction: column;
+        gap: 4.5rem;
+        padding-bottom: 4rem;
+      }
+
+      section {
+        scroll-margin-top: 120px;
+      }
+
       .hero {
         display: grid;
-        gap: 2rem;
+        gap: 2.5rem;
+        padding: 5rem 0 3rem;
         align-items: center;
-        padding: 6rem 0 4rem;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       }
 
-      .hero-content h1 {
-        font-size: clamp(2.6rem, 5vw, 3.8rem);
+      .hero h1 {
+        font-size: clamp(2.4rem, 6vw, 3.4rem);
       }
 
-      .hero-sub {
-        font-size: 1.1rem;
-        max-width: 540px;
+      .hero p {
+        font-size: 1.05rem;
+        max-width: 520px;
       }
 
       .hero-cta {
@@ -196,228 +196,116 @@
         align-items: center;
       }
 
-      .hero-stats {
-        display: flex;
-        gap: 1.5rem;
-        flex-wrap: wrap;
-        margin-top: 2.5rem;
-      }
-
-      .hero-stat {
-        min-width: 180px;
-        background: var(--light);
-        border-radius: var(--radius);
-        padding: 1.5rem;
-        box-shadow: var(--shadow);
-      }
-
-      .hero-stat strong {
-        font-size: 1.8rem;
-        color: var(--teal);
-      }
-
-      /* Portfolio */
-      section {
-        padding: 5rem 0;
-      }
-
-      .section-header {
-        display: flex;
-        flex-direction: column;
-        gap: 0.75rem;
-        margin-bottom: 2.5rem;
-        max-width: 680px;
-      }
-
-      .filters {
-        display: flex;
-        gap: 0.75rem;
-        flex-wrap: wrap;
-      }
-
-      .filter-btn {
-        padding: 0.55rem 1.4rem;
-        border-radius: 999px;
-        border: 1px solid rgba(26, 155, 142, 0.25);
-        background: rgba(26, 155, 142, 0.08);
-        color: var(--teal);
-        font-weight: 500;
-        cursor: pointer;
-        transition: all 0.3s ease;
-      }
-
-      .filter-btn.active,
-      .filter-btn:hover {
-        background: var(--teal);
-        color: var(--light);
-        border-color: transparent;
-        box-shadow: 0 12px 24px rgba(26, 155, 142, 0.18);
-      }
-
-      .portfolio-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-        gap: 1.5rem;
-      }
-
-      .portfolio-card {
-        background: var(--light);
-        border-radius: var(--radius);
-        overflow: hidden;
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-        padding: 1rem;
-        box-shadow: var(--shadow);
-        cursor: pointer;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-      }
-
-      .portfolio-card:hover {
-        transform: translateY(-6px);
-        box-shadow: 0 26px 46px rgba(16, 20, 20, 0.18);
-      }
-
-      .portfolio-card h4 {
-        margin-bottom: 0.25rem;
-      }
-
-      .portfolio-card span {
-        font-size: 0.85rem;
-        color: var(--muted);
-      }
-
-      /* Services */
-      .services-grid,
-      .services-main {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-        gap: 1.5rem;
-      }
-
-      .service-card {
-        background: var(--light);
-        padding: 2rem 1.6rem;
-        border-radius: var(--radius);
-        box-shadow: var(--shadow);
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-      }
-
-      .service-card:hover {
-        transform: translateY(-6px);
-        box-shadow: 0 26px 46px rgba(16, 20, 20, 0.15);
-      }
-
-      .service-card .icon {
-        width: 46px;
-        height: 46px;
-        border-radius: 14px;
-        background: rgba(26, 155, 142, 0.12);
+      .tag {
         display: inline-flex;
         align-items: center;
-        justify-content: center;
-        font-size: 1.5rem;
-        color: var(--teal);
-      }
-
-      .service-card button {
-        align-self: flex-start;
-        border: none;
-        background: rgba(26, 155, 142, 0.12);
-        color: var(--teal);
-        padding: 0.65rem 1.4rem;
+        padding: 0.35rem 0.9rem;
         border-radius: 999px;
+        font-size: 0.78rem;
         font-weight: 600;
-        cursor: pointer;
-        transition: all 0.3s ease;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        background: rgba(26, 155, 142, 0.15);
+        color: var(--teal);
       }
 
-      .service-card button:hover {
-        background: var(--teal);
-        color: var(--light);
-      }
-
-      .service-highlight {
-        background: var(--soft-gray);
-        border-radius: var(--radius);
-        padding: 2rem;
+      .grid {
         display: grid;
-        gap: 1.2rem;
-        margin-top: 2rem;
+        gap: 1.6rem;
       }
 
-      .timeline {
+      .grid-portfolio {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      }
+
+      .card {
+        background: var(--white);
+        padding: 1.6rem;
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 24px 48px rgba(16, 38, 38, 0.18);
+      }
+
+      .portfolio-item {
+        padding: 0;
+        overflow: hidden;
+      }
+
+      .portfolio-item figure {
+        margin: 0;
+      }
+
+      .portfolio-item figcaption {
+        padding: 1.2rem 1.4rem 1.6rem;
+      }
+
+      .services {
+        background: var(--white);
+        border-radius: 32px;
+        padding: 3rem;
+        box-shadow: var(--shadow);
         display: grid;
         gap: 2rem;
-        margin-top: 3rem;
       }
 
-      .timeline-step {
+      .services-list {
         display: grid;
-        grid-template-columns: 60px 1fr;
-        gap: 1.5rem;
-        align-items: start;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1.2rem;
       }
 
-      .timeline-step strong {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        background: var(--teal);
-        color: var(--light);
-        border-radius: 50%;
-        width: 48px;
-        height: 48px;
-        font-size: 1.1rem;
+      .service-item {
+        padding: 1.1rem 1.3rem;
+        border-radius: 14px;
+        background: var(--surface);
+        font-weight: 500;
       }
 
-      /* CTA strip */
-      .cta-strip {
+      .mini-cta {
         background: var(--teal);
-        color: var(--light);
-        border-radius: 28px;
-        padding: 2.8rem 3rem;
+        color: var(--white);
+        border-radius: 26px;
+        padding: 2.2rem 2.4rem;
         display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 1.5rem;
         flex-wrap: wrap;
-        box-shadow: 0 24px 46px rgba(26, 155, 142, 0.26);
+        align-items: center;
+        gap: 1.2rem;
+        justify-content: space-between;
       }
 
-      .cta-strip h3 {
-        color: var(--light);
+      .mini-cta p {
+        color: rgba(255, 255, 255, 0.86);
         margin: 0;
       }
 
-      .cta-strip p {
-        color: rgba(255, 255, 255, 0.8);
-        margin: 0;
-      }
-
-      /* iFood landing */
-      .landing {
-        background: var(--light);
-        padding: 3rem;
-        border-radius: 32px;
+      .ifood {
+        background: var(--white);
+        border-radius: 48px;
+        padding: 3.5rem 0;
         box-shadow: var(--shadow);
-        display: grid;
-        gap: 2.5rem;
       }
 
-      .before-after-grid {
+      .ifood > .container {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-        gap: 1.5rem;
+        gap: 3rem;
+      }
+
+      .ifood-compare {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 1.4rem;
       }
 
       .compare-card {
         position: relative;
         overflow: hidden;
         border-radius: var(--radius);
+        background: #0f1414;
         box-shadow: var(--shadow);
         background: #0d1111;
       }
@@ -443,12 +331,13 @@
       }
 
       .compare-slider {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 1rem;
         width: 100%;
         -webkit-appearance: none;
         appearance: none;
-        position: absolute;
-        left: 0;
-        bottom: 1rem;
       }
 
       .compare-slider::-webkit-slider-thumb {
@@ -456,177 +345,110 @@
         appearance: none;
         width: 18px;
         height: 18px;
-        background: var(--teal);
         border-radius: 50%;
+        background: var(--teal);
         border: none;
-        box-shadow: 0 0 0 4px rgba(26, 155, 142, 0.2);
+        box-shadow: 0 0 0 4px rgba(26, 155, 142, 0.25);
       }
 
       .compare-slider::-webkit-slider-runnable-track {
         height: 4px;
-        background: rgba(255, 255, 255, 0.5);
+        background: rgba(255, 255, 255, 0.6);
       }
 
-      .steps,
-      .testimonials,
-      .pricing-grid,
-      .faq {
+      .ifood-cards {
         display: grid;
-        gap: 1.5rem;
-      }
-
-      .steps {
+        gap: 1.2rem;
         grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       }
 
-      .step-card,
-      .testimonial,
-      .pricing-card {
-        background: var(--soft-gray);
+      .ifood-card {
+        background: var(--surface);
         border-radius: var(--radius);
-        padding: 1.8rem;
-        display: grid;
-        gap: 0.75rem;
-      }
-
-      .testimonial-stars {
-        color: #fbbf24;
-      }
-
-      .pricing-card {
-        text-align: center;
-        background: var(--light);
-        box-shadow: var(--shadow);
-      }
-
-      .pricing-card.highlight {
-        border: 2px solid var(--teal);
-        transform: translateY(-6px);
-      }
-
-      .faq-item {
-        background: var(--light);
-        border-radius: var(--radius);
-        box-shadow: var(--shadow);
-        overflow: hidden;
-      }
-
-      .faq-question {
-        width: 100%;
-        text-align: left;
-        padding: 1.3rem 1.5rem;
-        border: none;
-        background: none;
-        font-weight: 600;
-        cursor: pointer;
-        position: relative;
-      }
-
-      .faq-question::after {
-        content: "+";
-        position: absolute;
-        right: 1.5rem;
-        top: 1.3rem;
-        font-size: 1.2rem;
-        transition: transform 0.3s ease;
-      }
-
-      .faq-item.active .faq-question::after {
-        transform: rotate(45deg);
-      }
-
-      .faq-answer {
-        max-height: 0;
-        overflow: hidden;
-        padding: 0 1.5rem;
-        transition: max-height 0.35s ease;
-      }
-
-      .faq-item.active .faq-answer {
-        max-height: 240px;
-        padding-bottom: 1.2rem;
-      }
-
-      /* About */
-      .about-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 2rem;
-        align-items: center;
-      }
-
-      .about-photo {
-        border-radius: 24px;
-        overflow: hidden;
-        box-shadow: var(--shadow);
-      }
-
-      .values-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 1.5rem;
-        margin-top: 2.5rem;
-      }
-
-      .value-card {
-        background: var(--light);
         padding: 1.6rem;
-        border-radius: var(--radius);
-        box-shadow: var(--shadow);
-      }
-
-      .stats {
-        display: flex;
-        gap: 1.5rem;
-        flex-wrap: wrap;
-        margin: 2rem 0;
-      }
-
-      .stat {
-        min-width: 160px;
-        padding: 1.2rem 1.4rem;
-        border-radius: var(--radius);
-        background: var(--soft-gray);
-        text-align: center;
-      }
-
-      .stat strong {
-        display: block;
-        font-size: 2rem;
-        color: var(--teal);
-      }
-
-      /* Contact */
-      .contact-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 0.6rem;
+      }
+
+      .faq {
+        display: grid;
+        gap: 0.8rem;
+      }
+
+      .faq details {
+        background: var(--surface);
+        padding: 1.1rem 1.3rem;
+        border-radius: var(--radius);
+      }
+
+      .about {
+        display: grid;
+        gap: 2.4rem;
+        align-items: center;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      }
+
+      .about-visual {
+        border-radius: 28px;
+        box-shadow: var(--shadow);
+        min-height: 320px;
+        background: radial-gradient(circle at 20% 20%, rgba(26, 155, 142, 0.18), transparent 60%),
+          linear-gradient(135deg, rgba(26, 155, 142, 0.95), rgba(16, 121, 111, 0.9));
+        color: rgba(255, 255, 255, 0.9);
+        display: grid;
+        align-content: end;
+        padding: 2.4rem;
+      }
+
+      .about-visual strong {
+        font-size: 2rem;
+        display: block;
+        margin-bottom: 0.4rem;
+      }
+
+      .values {
+        display: grid;
+        gap: 1rem;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      }
+
+      .value {
+        background: var(--white);
+        border-radius: var(--radius);
+        padding: 1.2rem 1.4rem;
+        box-shadow: 0 12px 24px rgba(16, 38, 38, 0.08);
+      }
+
+      .contact {
+        display: grid;
         gap: 2rem;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       }
 
       form {
-        background: var(--light);
+        background: var(--white);
         border-radius: var(--radius);
-        box-shadow: var(--shadow);
         padding: 2rem;
+        box-shadow: var(--shadow);
         display: grid;
         gap: 1rem;
       }
 
       label {
+        display: grid;
+        gap: 0.3rem;
         font-weight: 600;
-        font-size: 0.9rem;
-        color: var(--mid);
+        font-size: 0.92rem;
       }
 
       input,
       select,
       textarea {
-        width: 100%;
-        padding: 0.85rem 1rem;
-        border-radius: 10px;
-        border: 1px solid rgba(31, 42, 42, 0.12);
-        background: #fff;
-        font-family: inherit;
+        font: inherit;
+        padding: 0.8rem 1rem;
+        border-radius: 12px;
+        border: 1px solid rgba(21, 34, 34, 0.12);
+        background: #fbfdfd;
         transition: border 0.3s ease, box-shadow 0.3s ease;
         resize: vertical;
       }
@@ -648,171 +470,68 @@
         gap: 1rem;
       }
 
-      .contact-card {
-        background: var(--light);
-        padding: 1.5rem;
+      .contact-item {
+        background: var(--white);
         border-radius: var(--radius);
-        box-shadow: var(--shadow);
-        display: grid;
-        gap: 0.5rem;
+        padding: 1.3rem 1.5rem;
+        box-shadow: 0 12px 24px rgba(16, 38, 38, 0.08);
       }
 
-      .contact-card a {
-        color: var(--teal);
-        font-weight: 600;
-      }
-
-      /* Footer */
       footer {
+        background: var(--white);
+        border-top: 1px solid rgba(21, 34, 34, 0.08);
         margin-top: 4rem;
-        padding: 3rem 0;
-        background: var(--dark);
-        color: rgba(255, 255, 255, 0.8);
+        padding: 2.6rem 0 2rem;
+        text-align: center;
       }
 
-      .footer-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-        gap: 2rem;
-        align-items: center;
+      footer img {
+        height: 36px;
+        margin-bottom: 1rem;
       }
 
-      .footer-links {
-        display: flex;
-        gap: 1.5rem;
-        flex-wrap: wrap;
+      footer p {
+        font-size: 0.9rem;
+        color: var(--soft-ink);
       }
 
-      .footer-links a {
-        color: rgba(255, 255, 255, 0.78);
-      }
-
-      .socials {
-        display: flex;
-        gap: 1rem;
-      }
-
-      .socials a {
-        width: 38px;
-        height: 38px;
-        border-radius: 50%;
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        color: var(--light);
-      }
-
-      /* Modal */
-      .modal {
-        position: fixed;
-        inset: 0;
-        display: none;
-        align-items: center;
-        justify-content: center;
-        background: rgba(16, 20, 20, 0.72);
-        padding: 2rem;
-        z-index: 9999;
-      }
-
-      .modal.open {
-        display: flex;
-      }
-
-      .modal-content {
-        width: min(860px, 92vw);
-        background: var(--light);
-        border-radius: 24px;
-        padding: 2rem;
-        display: grid;
-        gap: 1.5rem;
-        position: relative;
-        max-height: 90vh;
-        overflow-y: auto;
-      }
-
-      .modal-close {
-        position: absolute;
-        right: 1.5rem;
-        top: 1.5rem;
-        border: none;
-        background: none;
-        font-size: 1.8rem;
-        cursor: pointer;
-        color: var(--muted);
-      }
-
-      .modal-gallery {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 1rem;
-      }
-
-      .modal-tags {
-        display: flex;
-        gap: 0.5rem;
-        flex-wrap: wrap;
-      }
-
-      .modal-tags span {
-        background: rgba(26, 155, 142, 0.12);
-        color: var(--teal);
-        padding: 0.35rem 0.75rem;
-        border-radius: 999px;
-        font-size: 0.8rem;
-        font-weight: 600;
-      }
-
-      /* Responsive */
       @media (max-width: 900px) {
         .nav-menu {
           position: fixed;
-          inset: 0 0 auto auto;
-          top: 80px;
-          right: 20px;
-          background: var(--light);
-          flex-direction: column;
-          padding: 1.5rem;
-          border-radius: 16px;
+          inset: 80px 18px auto;
+          background: var(--white);
+          border-radius: 18px;
+          padding: 1.4rem 1.6rem;
           box-shadow: var(--shadow);
-          transform: scale(0.9);
-          transform-origin: top right;
+          flex-direction: column;
+          gap: 1rem;
           opacity: 0;
-          visibility: hidden;
+          pointer-events: none;
+          transform: translateY(-10px);
           transition: opacity 0.3s ease, transform 0.3s ease;
         }
 
         .nav-menu.open {
           opacity: 1;
-          visibility: visible;
-          transform: scale(1);
+          pointer-events: auto;
+          transform: translateY(0);
         }
 
         .hamburger {
           display: block;
         }
-      }
 
-      @media (max-width: 680px) {
-        .hero {
-          text-align: center;
-        }
-
-        .hero-cta,
-        .hero-stats {
-          justify-content: center;
-        }
-
-        .cta-strip {
+        .hero,
+        .mini-cta {
           text-align: center;
           justify-content: center;
         }
 
-        .timeline-step {
-          grid-template-columns: 1fr;
+        .hero-cta {
+          justify-content: center;
         }
 
-        .landing {
+        .services {
           padding: 2.2rem;
         }
       }
@@ -821,9 +540,9 @@
   <body>
     <header>
       <div class="container nav">
-        <a href="#home" class="nav-logo">
+        <a class="nav-logo" href="#home" aria-label="Studio Brezer">
           <img src="assets/logo-brezer.svg" alt="Studio Brezer" loading="lazy" />
-          <strong>Studio Brezer</strong>
+          <span>Studio Brezer</span>
         </a>
         <nav class="nav-menu" aria-label="Navegação principal">
           <a href="#home" class="active">Home</a>
@@ -833,377 +552,212 @@
           <a href="#sobre">Sobre</a>
           <a href="#contato">Contato</a>
         </nav>
-        <div class="nav-actions">
-          <a href="https://wa.me/5511999999999" class="button" target="_blank" rel="noopener">Falar no WhatsApp</a>
-          <button class="hamburger" aria-label="Abrir menu">
-            <span></span>
-          </button>
-        </div>
+        <button class="hamburger" type="button" aria-label="Abrir menu">
+          <span></span>
+        </button>
       </div>
     </header>
 
     <main>
-      <section class="container hero" id="home">
-        <div class="hero-content">
-          <img src="assets/logo-brezer.svg" alt="Logotipo Studio Brezer" loading="lazy" style="width: 160px; margin-bottom: 1.5rem" />
-          <h1>Transformamos ideias em design que vende</h1>
-          <p class="hero-sub">
-            Somos o estúdio criativo que combina estratégia, estética e performance para colocar a sua marca em destaque nos canais digitais e físicos.
-          </p>
-          <div class="hero-cta">
-            <a href="#portfolio" class="button">Ver portfólio</a>
-            <a href="#contato" class="button" style="background: rgba(26, 155, 142, 0.12); color: var(--teal); box-shadow: none">Solicitar orçamento</a>
+      <section id="home">
+        <div class="container hero">
+          <div>
+            <span class="tag">Design que vende</span>
+            <h1>Seu estúdio de confiança para marcas que querem clareza e resultado</h1>
+            <p>
+              Projetos enxutos, entregues com proximidade. Identidade, social media e cardápios otimizados para transformar visual em venda.
+            </p>
+            <div class="hero-cta">
+              <a class="button" href="#portfolio">Ver portfólio</a>
+              <a class="button" style="background: rgba(26, 155, 142, 0.12); color: var(--teal); box-shadow: none" href="#contato">Falar com o estúdio</a>
+            </div>
           </div>
-          <div class="hero-stats">
-            <div class="hero-stat">
-              <strong>230+</strong>
-              <p>Projetos concluídos em identidade visual, social media e embalagens.</p>
-            </div>
-            <div class="hero-stat">
-              <strong>98%</strong>
-              <p>Clientes que relatam aumento direto nas vendas após nossos projetos.</p>
-            </div>
-            <div class="hero-stat">
-              <strong>7 dias</strong>
-              <p>Tempo médio para entregar o primeiro conceito com ajustes ilimitados.</p>
-            </div>
+          <div class="card" style="background: var(--white);">
+            <h3>O que entregamos</h3>
+            <p>• Direção visual clara<br />• Materiais prontos para publicar<br />• Suporte próximo e sem burocracia</p>
           </div>
         </div>
       </section>
 
       <section id="portfolio">
         <div class="container">
-          <div class="section-header">
-            <h2>Portfólio que vende</h2>
-            <p>Resultados reais com design estratégico. Filtre por categoria e descubra como transformamos visualmente cada negócio.</p>
-            <div class="filters" role="tablist">
-              <button class="filter-btn active" data-filter="all">Todos</button>
-              <button class="filter-btn" data-filter="identidade">Identidade Visual</button>
-              <button class="filter-btn" data-filter="social">Social Media</button>
-              <button class="filter-btn" data-filter="embalagens">Embalagens</button>
-              <button class="filter-btn" data-filter="ifood">iFood</button>
-            </div>
-          </div>
-          <div class="portfolio-grid">
-            <article class="portfolio-card" data-category="identidade" data-title="Rebranding Minimalista" data-tags="Identidade Visual" data-desafio="Marca sem posicionamento" data-solucao="Reposicionamento completo com sistema visual modular" data-resultado="Aumento de 42% em reconhecimento" data-gallery="https://source.unsplash.com/collection/190727/600x600?sig=1|https://source.unsplash.com/collection/190727/600x600?sig=2|https://source.unsplash.com/collection/190727/600x600?sig=3">
-              <img src="https://source.unsplash.com/collection/190727/600x600?sig=1" alt="Projeto identidade visual" loading="lazy" />
-              <div>
-                <h4>Rebranding Minimalista</h4>
-                <span>Identidade Visual</span>
-              </div>
+          <span class="tag">Portfólio</span>
+          <h2>Projetos favoritos</h2>
+          <p>Um recorte rápido de identidades, social media e cardápios que já estão gerando resultado.</p>
+          <div class="grid grid-portfolio">
+            <article class="card portfolio-item">
+              <figure>
+                <img src="assets/portfolio-feed.svg" alt="Prévia de feed social" loading="lazy" />
+                <figcaption>
+                  <h3>Social media direto ao ponto</h3>
+                  <p>Sequências prontas para calendário mensal com foco em CTA.</p>
+                </figcaption>
+              </figure>
             </article>
-            <article class="portfolio-card" data-category="social" data-title="Calendário Social Impact" data-tags="Social Media" data-desafio="Baixo engajamento" data-solucao="Templates performáticos com foco em CTA" data-resultado="+210% de interações" data-gallery="https://source.unsplash.com/collection/190727/600x600?sig=4|https://source.unsplash.com/collection/190727/600x600?sig=5">
-              <img src="https://source.unsplash.com/collection/190727/600x600?sig=4" alt="Projeto social media" loading="lazy" />
-              <div>
-                <h4>Calendário Social Impact</h4>
-                <span>Social Media</span>
-              </div>
+            <article class="card portfolio-item">
+              <figure>
+                <img src="assets/portfolio-banners.svg" alt="Materiais de campanha" loading="lazy" />
+                <figcaption>
+                  <h3>Campanhas e landing pages</h3>
+                  <p>Materiais para lançamentos rápidos mantendo consistência visual.</p>
+                </figcaption>
+              </figure>
             </article>
-            <article class="portfolio-card" data-category="embalagens" data-title="Linha Orgânica" data-tags="Embalagens" data-desafio="Gôndola competitiva" data-solucao="Design sensorial com storytelling" data-resultado="+35% em sell-out" data-gallery="https://source.unsplash.com/collection/190727/600x600?sig=6|https://source.unsplash.com/collection/190727/600x600?sig=7">
-              <img src="https://source.unsplash.com/collection/190727/600x600?sig=6" alt="Projeto embalagem" loading="lazy" />
-              <div>
-                <h4>Linha Orgânica</h4>
-                <span>Embalagens</span>
-              </div>
-            </article>
-            <article class="portfolio-card" data-category="ifood" data-title="Cardápio Gourmet" data-tags="iFood" data-desafio="Fotos amadoras" data-solucao="Produção e tratamento profissional" data-resultado="Ticket médio +27%" data-gallery="https://source.unsplash.com/collection/190727/600x600?sig=8|https://source.unsplash.com/collection/190727/600x600?sig=9">
-              <img src="https://source.unsplash.com/collection/190727/600x600?sig=8" alt="Projeto iFood" loading="lazy" />
-              <div>
-                <h4>Cardápio Gourmet</h4>
-                <span>Melhorias iFood</span>
-              </div>
-            </article>
-            <article class="portfolio-card" data-category="identidade" data-title="Marca Boutique" data-tags="Identidade Visual" data-desafio="Ausência de consistência" data-solucao="Manual de marca completo" data-resultado="Percepção premium reforçada" data-gallery="https://source.unsplash.com/collection/190727/600x600?sig=10|https://source.unsplash.com/collection/190727/600x600?sig=11">
-              <img src="https://source.unsplash.com/collection/190727/600x600?sig=10" alt="Projeto branding" loading="lazy" />
-              <div>
-                <h4>Marca Boutique</h4>
-                <span>Identidade Visual</span>
-              </div>
-            </article>
-            <article class="portfolio-card" data-category="social" data-title="Série Viral" data-tags="Social Media" data-desafio="Alcance estagnado" data-solucao="Estratégia de conteúdo orientada a dados" data-resultado="+3M de visualizações" data-gallery="https://source.unsplash.com/collection/190727/600x600?sig=12|https://source.unsplash.com/collection/190727/600x600?sig=13">
-              <img src="https://source.unsplash.com/collection/190727/600x600?sig=12" alt="Projeto mídias sociais" loading="lazy" />
-              <div>
-                <h4>Série Viral</h4>
-                <span>Social Media</span>
-              </div>
+            <article class="card portfolio-item">
+              <figure>
+                <img src="assets/portfolio-stories.svg" alt="Stories promocionais" loading="lazy" />
+                <figcaption>
+                  <h3>Stories que convertem</h3>
+                  <p>Formatos curtos, claros e prontos para subir nos stories.</p>
+                </figcaption>
+              </figure>
             </article>
           </div>
         </div>
       </section>
 
       <section id="servicos">
-        <div class="container">
-          <div class="section-header">
-            <h2>Serviços que entregam resultado</h2>
-            <p>Do branding à performance em marketplaces, atendemos negócios que querem vender mais com consistência visual e estratégia.</p>
+        <div class="container services">
+          <div>
+            <span class="tag">Serviços</span>
+            <h2>Escolha o que faz sentido hoje</h2>
+            <p>Cards objetivos para você entender rápido onde podemos ajudar. Orçamento sempre personalizado.</p>
           </div>
-          <div class="services-grid">
-            <div class="service-card">
-              <span class="icon">🎨</span>
-              <h3>Identidade Visual</h3>
-              <p>Construção ou reposicionamento completo da marca com manual, tipografia, paleta, aplicações e templates.</p>
-              <button type="button">Solicitar Orçamento</button>
-            </div>
-            <div class="service-card">
-              <span class="icon">📱</span>
-              <h3>Social Media</h3>
-              <p>Gestão visual mensal com calendários inteligentes, storytelling e layouts que convertem seguidores em clientes.</p>
-              <button type="button">Solicitar Orçamento</button>
-            </div>
-            <div class="service-card">
-              <span class="icon">🍔</span>
-              <h3>Melhorias iFood</h3>
-              <p>Fotos e menus que destacam o seu restaurante e aumentam o ticket médio com experiência visual otimizada.</p>
-              <button type="button">Solicitar Orçamento</button>
-            </div>
-            <div class="service-card">
-              <span class="icon">🖨️</span>
-              <h3>Materiais Gráficos</h3>
-              <p>Catálogos, cardápios, embalagens e brindes pensados para reforçar a identidade da marca em todos os pontos de contato.</p>
-              <button type="button">Solicitar Orçamento</button>
-            </div>
-            <div class="service-card">
-              <span class="icon">📦</span>
-              <h3>Embalagens</h3>
-              <p>Design funcional e memorável, com foco em storytelling e diferenciação na gôndola e nos apps de delivery.</p>
-              <button type="button">Solicitar Orçamento</button>
-            </div>
-            <div class="service-card">
-              <span class="icon">🧠</span>
-              <h3>Consultoria</h3>
-              <p>Sessões estratégicas para destravar dúvidas de posicionamento, identidade visual e otimização de canais digitais.</p>
-              <button type="button">Solicitar Orçamento</button>
-            </div>
+          <div class="services-list">
+            <div class="service-item">Identidade visual completa</div>
+            <div class="service-item">Social media mensal</div>
+            <div class="service-item">Melhorias iFood</div>
+            <div class="service-item">Materiais impressos</div>
+            <div class="service-item">Embalagens e rótulos</div>
+            <div class="service-item">Consultoria pontual</div>
           </div>
-          <div class="service-highlight">
-            <h3>Não encontrou o que precisa?</h3>
-            <p>Fale sobre seu projeto e construímos uma proposta personalizada com foco em objetivos e métricas claras.</p>
-            <a href="https://wa.me/5511999999999" class="button" target="_blank" rel="noopener">Falar com especialista</a>
-          </div>
-
-          <div class="timeline">
-            <h3>Nosso processo em 5 etapas</h3>
-            <div class="timeline-step">
-              <strong>1</strong>
-              <div>
-                <h4>Imersão estratégica</h4>
-                <p>Reunião inicial, diagnóstico de marca e definição de metas de negócio.</p>
-              </div>
+          <div class="mini-cta">
+            <div>
+              <h3>Não achou o formato perfeito?</h3>
+              <p>Conta pra gente pelo WhatsApp e montamos algo sob medida.</p>
             </div>
-            <div class="timeline-step">
-              <strong>2</strong>
-              <div>
-                <h4>Pesquisa e referências</h4>
-                <p>Coleta de repertório, benchmarking e construção de moodboards interativos.</p>
-              </div>
-            </div>
-            <div class="timeline-step">
-              <strong>3</strong>
-              <div>
-                <h4>Criação e prototipação</h4>
-                <p>Desenvolvimento de propostas visuais com foco em diferenciação e conversão.</p>
-              </div>
-            </div>
-            <div class="timeline-step">
-              <strong>4</strong>
-              <div>
-                <h4>Validação com o cliente</h4>
-                <p>Iterações guiadas por feedbacks, garantindo alinhamento com objetivos estratégicos.</p>
-              </div>
-            </div>
-            <div class="timeline-step">
-              <strong>5</strong>
-              <div>
-                <h4>Entrega e suporte</h4>
-                <p>Arquivos finais organizados, guias de uso e acompanhamento pós-entrega.</p>
-              </div>
-            </div>
+            <a class="button" href="https://wa.me/5547999999999" target="_blank" rel="noopener">Chamar no WhatsApp</a>
           </div>
         </div>
       </section>
 
-      <section id="ifood">
+      <section id="ifood" class="ifood">
         <div class="container">
-          <div class="landing">
-            <div class="section-header" style="margin-bottom: 0">
-              <h2>Suas fotos estão tirando clientes?</h2>
-              <p>Atualize o cardápio do iFood com imagens irresistíveis em 48h e veja seus pedidos dispararem.</p>
-              <a href="https://wa.me/5511999999999" class="button" target="_blank" rel="noopener">Quero vender mais no iFood</a>
-            </div>
-
-            <div>
-              <h3>Antes & depois</h3>
-              <p>Deslize e veja a transformação visual que gera desejo instantâneo.</p>
-              <div class="before-after-grid">
-                <div class="compare-card" aria-label="Comparativo de fotos iFood">
-                  <div class="compare-wrapper">
-                    <img src="https://source.unsplash.com/collection/190727/640x640?sig=20" alt="Foto antes" loading="lazy" />
-                    <img class="compare-after" src="https://source.unsplash.com/collection/190727/640x640?sig=21" alt="Foto depois" loading="lazy" />
-                    <input type="range" min="0" max="100" value="50" class="compare-slider" aria-label="Controle de comparação" />
-                  </div>
+          <div>
+            <span class="tag">Especial iFood</span>
+            <h2>Transformamos suas fotos em pedidos em 48h</h2>
+            <p>Você envia os cliques, nós devolvemos imagens irresistíveis, descrições otimizadas e arquivos prontos para o app.</p>
+            <a class="button" href="https://wa.me/5547999999999" target="_blank" rel="noopener">Quero destacar meu cardápio</a>
+          </div>
+          <div>
+            <h3>Antes e depois</h3>
+            <div class="ifood-compare">
+              <div class="compare-card" aria-label="Comparativo iFood 1">
+                <div class="compare-wrapper">
+                  <img src="assets/ifood-before.svg" alt="Foto antes" loading="lazy" />
+                  <img class="compare-after" src="assets/ifood-after.svg" alt="Foto depois" loading="lazy" />
+                  <input class="compare-slider" type="range" min="0" max="100" value="50" aria-label="Arraste para comparar" />
                 </div>
-                <div class="compare-card" aria-label="Comparativo de fotos iFood">
-                  <div class="compare-wrapper">
-                    <img src="https://source.unsplash.com/collection/190727/640x640?sig=22" alt="Foto antes" loading="lazy" />
-                    <img class="compare-after" src="https://source.unsplash.com/collection/190727/640x640?sig=23" alt="Foto depois" loading="lazy" />
-                    <input type="range" min="0" max="100" value="50" class="compare-slider" aria-label="Controle de comparação" />
-                  </div>
+              </div>
+              <div class="compare-card" aria-label="Comparativo iFood 2">
+                <div class="compare-wrapper">
+                  <img src="assets/ifood-before-02.svg" alt="Foto antes" loading="lazy" />
+                  <img class="compare-after" src="assets/ifood-after-02.svg" alt="Foto depois" loading="lazy" />
+                  <input class="compare-slider" type="range" min="0" max="100" value="50" aria-label="Arraste para comparar" />
                 </div>
-                <div class="compare-card" aria-label="Comparativo de fotos iFood">
-                  <div class="compare-wrapper">
-                    <img src="https://source.unsplash.com/collection/190727/640x640?sig=24" alt="Foto antes" loading="lazy" />
-                    <img class="compare-after" src="https://source.unsplash.com/collection/190727/640x640?sig=25" alt="Foto depois" loading="lazy" />
-                    <input type="range" min="0" max="100" value="50" class="compare-slider" aria-label="Controle de comparação" />
-                  </div>
+              </div>
+              <div class="compare-card" aria-label="Comparativo iFood 3">
+                <div class="compare-wrapper">
+                  <img src="assets/ifood-before-03.svg" alt="Foto antes" loading="lazy" />
+                  <img class="compare-after" src="assets/ifood-after-03.svg" alt="Foto depois" loading="lazy" />
+                  <input class="compare-slider" type="range" min="0" max="100" value="50" aria-label="Arraste para comparar" />
                 </div>
               </div>
             </div>
-
-            <div>
-              <h3>Como funciona</h3>
-              <div class="steps">
-                <div class="step-card">
-                  <strong>1. Envie suas fotos</strong>
-                  <p>Recebemos as imagens do seu cardápio ou realizamos a produção fotográfica.</p>
-                </div>
-                <div class="step-card">
-                  <strong>2. Tratamento profissional</strong>
-                  <p>Correção de cor, iluminação e composição para destacar cada prato.</p>
-                </div>
-                <div class="step-card">
-                  <strong>3. Receba em 48h</strong>
-                  <p>Entrega otimizada para iFood, redes sociais e materiais promocionais.</p>
-                </div>
+          </div>
+          <div>
+            <h3>Como funciona</h3>
+            <div class="ifood-cards">
+              <div class="ifood-card">
+                <strong>1. Você envia as fotos</strong>
+                <p>Compartilhe as imagens por WhatsApp ou drive. Se preferir, guiamos a captura.</p>
+              </div>
+              <div class="ifood-card">
+                <strong>2. Tratamento Brezer</strong>
+                <p>Edição de cor, contraste e recorte pensados para gerar desejo imediato.</p>
+              </div>
+              <div class="ifood-card">
+                <strong>3. Entrega em 48h</strong>
+                <p>Arquivos otimizados para iFood, redes sociais e anúncios.</p>
               </div>
             </div>
-
-            <div>
-              <h3>Depoimentos</h3>
-              <div class="testimonials">
-                <div class="testimonial">
-                  <div class="testimonial-stars">★★★★★</div>
-                  <p>“Depois das fotos novas, nosso ticket médio subiu 28% e conquistamos o selo Super Restaurante.”</p>
-                  <strong>Chef Ana, Empório Verde</strong>
-                </div>
-                <div class="testimonial">
-                  <div class="testimonial-stars">★★★★★</div>
-                  <p>“O time conseguiu traduzir nossa marca em imagens que realmente dão vontade de pedir.”</p>
-                  <strong>Lucas, Burger Lab</strong>
-                </div>
-                <div class="testimonial">
-                  <div class="testimonial-stars">★★★★★</div>
-                  <p>“Em uma semana já percebemos aumento na taxa de conversão dentro do app.”</p>
-                  <strong>Marina, Casa das Massas</strong>
-                </div>
+          </div>
+          <div>
+            <h3>Pacotes rápidos</h3>
+            <div class="ifood-cards">
+              <div class="ifood-card">
+                <strong>Básico</strong>
+                <p>10 fotos tratadas + ajustes de cor e recorte.</p>
+                <a class="button" href="https://wa.me/5547999999999" target="_blank" rel="noopener">Pedir orçamento</a>
+              </div>
+              <div class="ifood-card">
+                <strong>Pro</strong>
+                <p>20 fotos + templates para redes sociais.</p>
+                <a class="button" href="https://wa.me/5547999999999" target="_blank" rel="noopener">Quero esse</a>
+              </div>
+              <div class="ifood-card">
+                <strong>Completo</strong>
+                <p>40 fotos + vídeo teaser e suporte mensal.</p>
+                <a class="button" href="https://wa.me/5547999999999" target="_blank" rel="noopener">Falar com o time</a>
               </div>
             </div>
-
-            <div>
-              <h3>Pacotes</h3>
-              <div class="pricing-grid" style="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));">
-                <div class="pricing-card">
-                  <h4>Básico</h4>
-                  <p>10 fotos tratadas</p>
-                  <p>Orientações de cardápio</p>
-                  <p>Entrega em 3 dias úteis</p>
-                  <a href="https://wa.me/5511999999999" class="button" target="_blank" rel="noopener">Contratar</a>
-                </div>
-                <div class="pricing-card highlight">
-                  <h4>Pro</h4>
-                  <p>20 fotos tratadas</p>
-                  <p>Template social media</p>
-                  <p>Atualização de cardápio</p>
-                  <a href="https://wa.me/5511999999999" class="button" target="_blank" rel="noopener">Contratar</a>
-                </div>
-                <div class="pricing-card">
-                  <h4>Completo</h4>
-                  <p>40 fotos tratadas</p>
-                  <p>Video teaser + anúncios</p>
-                  <p>Suporte contínuo</p>
-                  <a href="https://wa.me/5511999999999" class="button" target="_blank" rel="noopener">Contratar</a>
-                </div>
-              </div>
-            </div>
-
-            <div>
-              <h3>Dúvidas frequentes</h3>
-              <div class="faq">
-                <div class="faq-item">
-                  <button class="faq-question">Vocês atendem em todo o Brasil?</button>
-                  <div class="faq-answer">
-                    <p>Sim! Atendemos remotamente com envio de fotos ou produção local através de parceiros em capitais selecionadas.</p>
-                  </div>
-                </div>
-                <div class="faq-item">
-                  <button class="faq-question">As fotos servem para outras plataformas?</button>
-                  <div class="faq-answer">
-                    <p>Entregamos arquivos otimizados para iFood, Rappi, Instagram e campanhas pagas, prontos para uso.</p>
-                  </div>
-                </div>
-                <div class="faq-item">
-                  <button class="faq-question">Como funciona o pagamento?</button>
-                  <div class="faq-answer">
-                    <p>50% no aceite da proposta e 50% na entrega final, via PIX, cartão ou boleto.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="cta-strip">
-              <div>
-                <h3>Pronto para destacar sua marca no iFood?</h3>
-                <p>Vamos construir imagens que fazem seus pratos serem clicados em segundos.</p>
-              </div>
-              <a href="https://wa.me/5511999999999" class="button" target="_blank" rel="noopener">Chamar no WhatsApp</a>
+          </div>
+          <div>
+            <h3>Dúvidas rápidas</h3>
+            <div class="faq">
+              <details>
+                <summary>Preciso enviar fotos profissionais?</summary>
+                <p>Não. Fotos de celular funcionam bem com boa luz. Passamos um guia rápido antes.</p>
+              </details>
+              <details>
+                <summary>Vocês atendem fora da região?</summary>
+                <p>Sim, trabalhamos online para todo o Brasil. Para produções presenciais, consulte disponibilidade.</p>
+              </details>
+              <details>
+                <summary>Consigo manter pacote recorrente?</summary>
+                <p>Temos planos mensais com atualização constante de cardápio e redes sociais.</p>
+              </details>
             </div>
           </div>
         </div>
       </section>
 
       <section id="sobre">
-        <div class="container">
-          <div class="about-grid">
-            <div class="about-photo">
-              <img src="https://source.unsplash.com/collection/190727/720x900?sig=33" alt="Fundadora Studio Brezer" loading="lazy" />
-            </div>
-            <div>
-              <h2>Por trás do Studio Brezer</h2>
-              <p>
-                Olá! Eu sou Bruna Brezer, designer e estrategista de marcas há mais de 8 anos. Criei o Studio Brezer para entregar projetos que unem estética impecável e foco em resultados.
-              </p>
-              <p>
-                Acreditamos que cada negócio tem um potencial único. Nosso papel é traduzir essa essência em narrativas visuais que impactam o cliente certo, no canal certo.
-              </p>
-              <div class="stats">
-                <div class="stat">
-                  <strong>+400</strong>
-                  <span>Empresas atendidas</span>
-                </div>
-                <div class="stat">
-                  <strong>12</strong>
-                  <span>Segmentos diferentes</span>
-                </div>
-                <div class="stat">
-                  <strong>35%</strong>
-                  <span>Média de aumento em conversão</span>
-                </div>
-              </div>
-              <a href="#contato" class="button">Vamos conversar</a>
-            </div>
+        <div class="container about">
+          <div class="about-visual">
+            <strong>Studio Brezer</strong>
+            <span>Design sem ruído, feito para o dia a dia do seu negócio.</span>
           </div>
-
-          <div class="values-grid">
-            <div class="value-card">
-              <h3>Estratégia</h3>
-              <p>Cada peça nasce de objetivos claros e métricas acompanhadas de perto.</p>
-            </div>
-            <div class="value-card">
-              <h3>Performance</h3>
-              <p>Design pensado para gerar cliques, pedidos e fidelização contínua.</p>
-            </div>
-            <div class="value-card">
-              <h3>Parceria</h3>
-              <p>Trabalhamos lado a lado, com comunicação transparente e suporte constante.</p>
+          <div>
+            <span class="tag">Sobre</span>
+            <h2>Prazer, Bruna Brezer</h2>
+            <p>
+              Depois de anos em agência, criei o Studio Brezer para aproximar o design da rotina de negócios locais. Aqui a conversa é direta e cada entrega tem
+              objetivo claro.
+            </p>
+            <div class="values">
+              <div class="value">
+                <strong>Visão comercial</strong>
+                <p>Decisões pautadas em métricas e necessidade real do cliente.</p>
+              </div>
+              <div class="value">
+                <strong>Agilidade</strong>
+                <p>Prazos enxutos, organização e arquivos prontos para uso imediato.</p>
+              </div>
+              <div class="value">
+                <strong>Parceria</strong>
+                <p>Contato direto para ajustes, dúvidas e próximos passos.</p>
+              </div>
             </div>
           </div>
         </div>
@@ -1211,124 +765,79 @@
 
       <section id="contato">
         <div class="container">
-          <div class="section-header">
-            <h2>Pronto para destacar sua marca?</h2>
-            <p>Conte sobre o seu projeto e retornamos em até 24h com o próximo passo.</p>
-          </div>
-          <div class="contact-grid">
+          <span class="tag">Contato</span>
+          <h2>Vamos tirar seu projeto do papel?</h2>
+          <p>Respondo em até 24h úteis com proposta alinhada ao que você precisa.</p>
+          <div class="contact">
             <form>
-              <label for="nome">Nome</label>
-              <input type="text" id="nome" name="nome" placeholder="Como podemos te chamar?" required />
-
-              <label for="email">E-mail</label>
-              <input type="email" id="email" name="email" placeholder="seunome@email.com" required />
-
-              <label for="whatsapp">WhatsApp</label>
-              <input type="tel" id="whatsapp" name="whatsapp" placeholder="(11) 99999-9999" required />
-
-              <label for="servico">Serviço de interesse</label>
-              <select id="servico" name="servico">
-                <option>Identidade Visual</option>
-                <option>Social Media</option>
-                <option>Melhorias iFood</option>
-                <option>Materiais Gráficos</option>
-                <option>Embalagens</option>
-                <option>Consultoria</option>
-                <option>Outro projeto</option>
-              </select>
-
-              <label for="mensagem">Mensagem</label>
-              <textarea id="mensagem" name="mensagem" placeholder="Conte um pouco sobre o seu desafio"></textarea>
-
-              <button type="submit" class="button">Enviar mensagem</button>
+              <label>
+                Nome
+                <input type="text" name="nome" placeholder="Como podemos te chamar?" required />
+              </label>
+              <label>
+                E-mail
+                <input type="email" name="email" placeholder="nome@email.com" required />
+              </label>
+              <label>
+                WhatsApp
+                <input type="tel" name="whatsapp" placeholder="(00) 00000-0000" />
+              </label>
+              <label>
+                Serviço de interesse
+                <select name="servico" required>
+                  <option value="" disabled selected>Selecione</option>
+                  <option>Identidade visual</option>
+                  <option>Social media</option>
+                  <option>Melhorias iFood</option>
+                  <option>Materiais impressos</option>
+                  <option>Embalagens</option>
+                  <option>Consultoria</option>
+                  <option>Outro projeto</option>
+                </select>
+              </label>
+              <label>
+                Mensagem
+                <textarea name="mensagem" placeholder="Conte rapidamente o que precisa"></textarea>
+              </label>
+              <button class="button" type="submit">Enviar mensagem</button>
             </form>
-
             <div class="contact-info">
-              <div class="contact-card">
-                <strong>Email</strong>
-                <a href="mailto:contato@studiobrezer.com">contato@studiobrezer.com</a>
+              <div class="contact-item">
+                <strong>E-mail</strong>
+                <p><a href="mailto:contato@studiobrezer.com">contato@studiobrezer.com</a></p>
               </div>
-              <div class="contact-card">
+              <div class="contact-item">
                 <strong>WhatsApp</strong>
-                <a href="https://wa.me/5511999999999" target="_blank" rel="noopener">(11) 99999-9999</a>
+                <p><a href="https://wa.me/5547999999999" target="_blank" rel="noopener">(47) 99999-9999</a></p>
               </div>
-              <div class="contact-card">
+              <div class="contact-item">
                 <strong>Instagram</strong>
-                <a href="https://instagram.com/studiobrezer" target="_blank" rel="noopener">@studiobrezer</a>
+                <p><a href="https://instagram.com/studiobrezer" target="_blank" rel="noopener">@studiobrezer</a></p>
               </div>
-              <div class="contact-card">
+              <div class="contact-item">
                 <strong>Horário</strong>
-                <span>Seg a Sex • 9h às 18h</span>
+                <p>Segunda a sexta, 9h às 18h — atendimento online para todo o Brasil.</p>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      <section>
-        <div class="container">
-          <div class="cta-strip">
-            <div>
-              <h3>Pronto para destacar sua marca?</h3>
-              <p>Design estratégico para negócios que querem escalar resultados.</p>
-            </div>
-            <a href="https://wa.me/5511999999999" class="button" target="_blank" rel="noopener">Quero começar</a>
           </div>
         </div>
       </section>
     </main>
 
     <footer>
-      <div class="container footer-grid">
-        <div>
-          <img src="assets/logo-brezer.svg" alt="Studio Brezer" loading="lazy" style="height: 50px" />
-          <p>Studio Brezer • Portfólio que vende.</p>
-        </div>
-        <div class="footer-links">
-          <a href="#home">Home</a>
-          <a href="#portfolio">Portfólio</a>
-          <a href="#servicos">Serviços</a>
-          <a href="#ifood">iFood</a>
-          <a href="#sobre">Sobre</a>
-          <a href="#contato">Contato</a>
-        </div>
-        <div class="socials">
-          <a href="https://instagram.com/studiobrezer" aria-label="Instagram" target="_blank" rel="noopener">IG</a>
-          <a href="https://behance.net" aria-label="Behance" target="_blank" rel="noopener">Be</a>
-          <a href="https://wa.me/5511999999999" aria-label="WhatsApp" target="_blank" rel="noopener">WA</a>
-        </div>
-      </div>
-      <div class="container" style="margin-top: 2rem; text-align: center; font-size: 0.85rem; color: rgba(255, 255, 255, 0.6)">
-        © <span id="year"></span> Studio Brezer. Todos os direitos reservados.
+      <div class="container">
+        <img src="assets/logo-brezer.svg" alt="Studio Brezer" loading="lazy" />
+        <p>© <span id="year"></span> Studio Brezer — portfólio que vende sem complicação.</p>
       </div>
     </footer>
-
-    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-      <div class="modal-content">
-        <button class="modal-close" aria-label="Fechar">×</button>
-        <h3 id="modal-title"></h3>
-        <div class="modal-tags"></div>
-        <div class="modal-description"></div>
-        <div class="modal-gallery"></div>
-      </div>
-    </div>
 
     <script>
       const navMenu = document.querySelector('.nav-menu');
       const navLinks = document.querySelectorAll('.nav-menu a');
       const hamburger = document.querySelector('.hamburger');
-      const modal = document.querySelector('.modal');
-      const modalTitle = document.querySelector('#modal-title');
-      const modalTags = document.querySelector('.modal-tags');
-      const modalDescription = document.querySelector('.modal-description');
-      const modalGallery = document.querySelector('.modal-gallery');
-      const modalClose = document.querySelector('.modal-close');
-      const filterButtons = document.querySelectorAll('.filter-btn');
-      const portfolioCards = document.querySelectorAll('.portfolio-card');
       const compareSliders = document.querySelectorAll('.compare-slider');
-      const faqItems = document.querySelectorAll('.faq-item');
 
-      document.querySelector('#year').textContent = new Date().getFullYear();
+      document.getElementById('year').textContent = new Date().getFullYear();
 
       const toggleMenu = () => {
         navMenu.classList.toggle('open');
@@ -1358,62 +867,6 @@
         });
       });
 
-      filterButtons.forEach((button) => {
-        button.addEventListener('click', () => {
-          filterButtons.forEach((btn) => btn.classList.remove('active'));
-          button.classList.add('active');
-          const filter = button.dataset.filter;
-          portfolioCards.forEach((card) => {
-            const category = card.dataset.category;
-            card.style.display = filter === 'all' || category === filter ? 'flex' : 'none';
-          });
-        });
-      });
-
-      const openModal = (card) => {
-        const { title, tags, desafio, solucao, resultado, gallery } = card.dataset;
-        modalTitle.textContent = title;
-        modalTags.innerHTML = '';
-        tags.split(',').forEach((tag) => {
-          const span = document.createElement('span');
-          span.textContent = tag.trim();
-          modalTags.appendChild(span);
-        });
-        modalDescription.innerHTML = `
-          <h4>Desafio</h4>
-          <p>${desafio}</p>
-          <h4>Solução</h4>
-          <p>${solucao}</p>
-          <h4>Resultado</h4>
-          <p>${resultado}</p>`;
-        modalGallery.innerHTML = '';
-        gallery.split('|').forEach((src) => {
-          const img = document.createElement('img');
-          img.src = src.trim();
-          img.alt = `${title} visual`;
-          img.loading = 'lazy';
-          modalGallery.appendChild(img);
-        });
-        modal.classList.add('open');
-        document.body.style.overflow = 'hidden';
-      };
-
-      portfolioCards.forEach((card) => {
-        card.addEventListener('click', () => openModal(card));
-      });
-
-      const closeModal = () => {
-        modal.classList.remove('open');
-        document.body.style.overflow = '';
-      };
-
-      modalClose.addEventListener('click', closeModal);
-      modal.addEventListener('click', (event) => {
-        if (event.target === modal) {
-          closeModal();
-        }
-      });
-
       compareSliders.forEach((slider) => {
         const wrapper = slider.closest('.compare-wrapper');
         const afterImg = wrapper.querySelector('.compare-after');
@@ -1421,43 +874,6 @@
           afterImg.style.setProperty('--pos', slider.value);
         });
       });
-
-      faqItems.forEach((item) => {
-        const question = item.querySelector('.faq-question');
-        question.addEventListener('click', () => {
-          item.classList.toggle('active');
-        });
-      });
-
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('visible');
-              observer.unobserve(entry.target);
-            }
-          });
-        },
-        { threshold: 0.18 }
-      );
-
-      document.querySelectorAll('section, .service-card, .portfolio-card, .cta-strip').forEach((el) => {
-        el.classList.add('fade');
-        observer.observe(el);
-      });
     </script>
-
-    <style>
-      .fade {
-        opacity: 0;
-        transform: translateY(30px);
-        transition: opacity 0.8s ease, transform 0.8s ease;
-      }
-
-      .fade.visible {
-        opacity: 1;
-        transform: none;
-      }
-    </style>
   </body>
 </html>
