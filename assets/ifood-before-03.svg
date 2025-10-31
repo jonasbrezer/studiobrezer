@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900">
+  <defs>
+    <linearGradient id="beforeGradient03" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#9f1239" />
+      <stop offset="100%" stop-color="#450a0a" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="900" fill="url(#beforeGradient03)" />
+  <g fill="rgba(255,255,255,0.82)" font-family="'Poppins', sans-serif" text-anchor="middle">
+    <text x="50%" y="46%" font-size="136" font-weight="700">ANTES</text>
+    <text x="50%" y="56%" font-size="44" font-weight="400">Sem edição profissional</text>
+  </g>
+  <g fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="12" stroke-linecap="round">
+    <path d="M340 240h520" />
+    <path d="M340 340h520" opacity="0.7" />
+    <path d="M340 440h520" opacity="0.5" />
+    <path d="M340 540h320" opacity="0.4" />
+  </g>
+</svg>
