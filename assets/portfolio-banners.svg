@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600">
+  <defs>
+    <linearGradient id="bannerTop" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#fff0d6" />
+      <stop offset="50%" stop-color="#ffe0ba" />
+      <stop offset="100%" stop-color="#ffc791" />
+    </linearGradient>
+    <linearGradient id="bannerBottom" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#d8f2f0" />
+      <stop offset="100%" stop-color="#9ed7d0" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="280" rx="40" fill="url(#bannerTop)" />
+  <rect y="320" width="1200" height="280" rx="40" fill="url(#bannerBottom)" />
+  <g font-family="'Poppins', sans-serif" font-weight="600">
+    <text x="80" y="140" font-size="64" fill="#174a4a">Campanhas</text>
+    <text x="80" y="200" font-size="40" fill="#2c6962">Banners com foco em conversão</text>
+    <text x="80" y="460" font-size="64" fill="#0f3f54">Landing Pages</text>
+    <text x="80" y="520" font-size="38" fill="#1a5d73">Design responsivo e copy clara</text>
+  </g>
+  <g fill="none" stroke="#ffffff" stroke-width="18" stroke-linecap="round" opacity="0.45">
+    <path d="M780 72c80 0 120 48 120 108s-56 108-128 108h-200" />
+    <path d="M880 392c90 0 140 44 140 108s-60 108-140 108H640" />
+  </g>
+</svg>

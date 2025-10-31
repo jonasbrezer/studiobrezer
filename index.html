@@ -2,32 +2,216 @@
 <html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Studio Brezer</title>
-    <style>
-      body {
-        background: #0f0f0f;
-        color: #fff;
-        font-family: Arial, sans-serif;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        height: 100vh;
-        margin: 0;
-      }
-      h1 {
-        font-size: 3rem;
-        margin-bottom: 0.5rem;
-      }
-      p {
-        color: #aaa;
-        font-size: 1.2rem;
-      }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Studio Brezer • Design limpo que vende</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <h1>Studio Brezer</h1>
-    <p>Em breve, um novo universo criativo.</p>
+    <header class="site-header">
+      <div class="container header-bar">
+        <a href="#home" class="brand" aria-label="Studio Brezer">
+          <img src="assets/logo-brezer.svg" alt="Studio Brezer" width="128" height="40" />
+          <span>Studio Brezer</span>
+        </a>
+        <nav class="menu" id="menu" aria-label="Navegação principal">
+          <a href="#home" class="menu-link">Home</a>
+          <a href="#portfolio" class="menu-link">Portfólio</a>
+          <a href="#servicos" class="menu-link">Serviços</a>
+          <a href="#ifood" class="menu-link">iFood</a>
+          <a href="#sobre" class="menu-link">Sobre</a>
+          <a href="#contato" class="menu-link">Contato</a>
+        </nav>
+        <button class="menu-toggle" type="button" aria-controls="menu" aria-expanded="false" aria-label="Alternar menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <section id="home" class="hero">
+        <div class="container hero-inner">
+          <div class="hero-copy">
+            <p class="badge">Design que vende</p>
+            <h1>Seu estúdio de confiança para marcas que querem clareza e resultado</h1>
+            <p class="hero-text">Projetos enxutos de identidade, social media e cardápios iFood que já nascem prontos para publicar e gerar pedidos.</p>
+            <div class="hero-actions">
+              <a class="button" href="#portfolio">Ver portfólio</a>
+              <a class="ghost-button" href="#contato">Falar com o estúdio</a>
+            </div>
+          </div>
+          <div class="hero-highlight">
+            <h2>O que entregamos</h2>
+            <ul>
+              <li>Direção visual clara</li>
+              <li>Materiais prontos para publicar</li>
+              <li>Suporte próximo e sem burocracia</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="portfolio" class="section">
+        <div class="container">
+          <div class="section-intro">
+            <p class="badge">Portfólio</p>
+            <h2>Projetos favoritos</h2>
+            <p>Um recorte rápido de identidades, social media e cardápios que já estão gerando resultado.</p>
+          </div>
+          <div class="card-grid">
+            <article class="tile">
+              <h3>Identidade Visual</h3>
+              <p>Sistemas visuais completos com ritmo e uso fácil no dia a dia.</p>
+              <span class="tag">Branding</span>
+            </article>
+            <article class="tile">
+              <h3>Campanhas e landing pages</h3>
+              <p>Materiais para lançamento com comunicação consistente e objetiva.</p>
+              <span class="tag">Conversão</span>
+            </article>
+            <article class="tile">
+              <h3>Stories que convertem</h3>
+              <p>Formatos curtos, claros e com call to action para promoções.</p>
+              <span class="tag">Social media</span>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="servicos" class="section section-alt">
+        <div class="container">
+          <div class="section-intro">
+            <p class="badge">Serviços</p>
+            <h2>Escolha o que faz sentido hoje</h2>
+            <p>Cards objetivos para você entender rápido onde podemos ajudar. Orçamento sempre personalizado.</p>
+          </div>
+          <div class="pill-grid">
+            <article class="pill">
+              <h3>Identidade visual completa</h3>
+              <p>Logo, manual rápido e peças essenciais.</p>
+            </article>
+            <article class="pill">
+              <h3>Social media mensal</h3>
+              <p>Sequências prontas com calendário em CTA.</p>
+            </article>
+            <article class="pill">
+              <h3>Melhorias iFood</h3>
+              <p>Fotos tratadas e descrição otimizada.</p>
+            </article>
+            <article class="pill">
+              <h3>Materiais impressos</h3>
+              <p>Cardápios, catálogos e papelaria.</p>
+            </article>
+            <article class="pill">
+              <h3>Embalagens e rótulos</h3>
+              <p>Experiência alinhada à marca.</p>
+            </article>
+            <article class="pill">
+              <h3>Consultoria pontual</h3>
+              <p>Direção criativa para campanhas.</p>
+            </article>
+          </div>
+          <div class="service-callout">
+            <p>Não achou o formato perfeito? Conta pra gente pelo WhatsApp e montamos algo sob medida.</p>
+            <a class="button" href="https://wa.me/5547999999999" target="_blank" rel="noopener">Chamar no WhatsApp</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="ifood" class="section ifood">
+        <div class="container">
+          <div class="section-intro">
+            <p class="badge">Especial iFood</p>
+            <h2>Transformamos suas fotos em pedidos em 48h</h2>
+            <p>Você envia os cliques, nós devolvemos imagens irresistíveis, descrições otimizadas e arquivos prontos para o app.</p>
+            <a class="button" href="https://wa.me/5547999999999" target="_blank" rel="noopener">Quero destacar meu cardápio</a>
+          </div>
+          <div class="ifood-content">
+            <div class="compare" aria-label="Comparativo antes e depois">
+              <div class="compare-frame">
+                <img src="assets/ifood-before.svg" alt="Foto antes do tratamento" class="compare-before" width="900" height="900" />
+                <img src="assets/ifood-after.svg" alt="Foto depois do tratamento" class="compare-after" width="900" height="900" />
+                <input type="range" min="0" max="100" value="50" class="compare-slider" aria-label="Controle do comparativo" />
+              </div>
+              <div class="compare-thumbs">
+                <img src="assets/ifood-before-02.svg" alt="Antes" width="900" height="900" />
+                <img src="assets/ifood-after-02.svg" alt="Depois" width="900" height="900" />
+                <img src="assets/ifood-before-03.svg" alt="Antes" width="900" height="900" />
+                <img src="assets/ifood-after-03.svg" alt="Depois" width="900" height="900" />
+              </div>
+            </div>
+            <div class="ifood-cards">
+              <article class="step-card">
+                <h3>1. Você envia as fotos</h3>
+                <p>Compartilhe as imagens por WhatsApp ou drive. Se preferir, guiamos a captura.</p>
+              </article>
+              <article class="step-card">
+                <h3>2. Tratamento Brezer</h3>
+                <p>Correção de cor, recorte e descrição com apelo gourmet.</p>
+              </article>
+              <article class="step-card">
+                <h3>3. Entrega em 48h</h3>
+                <p>Arquivos organizados para iFood, redes sociais e anúncios.</p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="sobre" class="section">
+        <div class="container about">
+          <article class="about-card">
+            <p class="badge">Sobre</p>
+            <h2>Olá, eu sou a Bruna Brezer</h2>
+            <p>Designer e estrategista há 8 anos. Criei o Studio Brezer para entregar proximidade, prazos curtos e foco em performance para negócios locais.</p>
+            <ul>
+              <li>+200 projetos entregues</li>
+              <li>Clientes em 7 estados</li>
+              <li>Atendimento 100% online</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section id="contato" class="section section-alt">
+        <div class="container contact">
+          <div class="contact-card">
+            <p class="badge">Contato</p>
+            <h2>Pronto para conversar?</h2>
+            <p>Envie uma mensagem rápida e respondemos em até 24h úteis.</p>
+            <div class="contact-links">
+              <a href="mailto:contato@studiobrezer.com">contato@studiobrezer.com</a>
+              <a href="https://wa.me/5547999999999" target="_blank" rel="noopener">WhatsApp (47) 99999-9999</a>
+              <a href="https://instagram.com/studiobrezer" target="_blank" rel="noopener">@studiobrezer</a>
+            </div>
+            <a class="ghost-button" href="https://wa.me/5547999999999" target="_blank" rel="noopener">Falar agora</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-bar">
+        <div class="footer-brand">
+          <img src="assets/logo-brezer.svg" alt="Studio Brezer" width="108" height="32" />
+          <p>Studio Brezer • Portfólio que vende sem exagero.</p>
+        </div>
+        <nav class="footer-links" aria-label="Links úteis">
+          <a href="#home">Home</a>
+          <a href="#portfolio">Portfólio</a>
+          <a href="#servicos">Serviços</a>
+          <a href="#ifood">iFood</a>
+          <a href="#sobre">Sobre</a>
+          <a href="#contato">Contato</a>
+        </nav>
+        <p class="footer-copy">© <span id="year"></span> Studio Brezer. Todos os direitos reservados.</p>
+      </div>
+    </footer>
+
+    <script src="app.js" defer></script>
   </body>
 </html>
