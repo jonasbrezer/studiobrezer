@@ -1,0 +1,12 @@
+<svg width="96" height="96" viewBox="0 0 96 96" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="grad-felipe" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffd166" />
+      <stop offset="100%" stop-color="#f28f1d" />
+    </linearGradient>
+  </defs>
+  <circle cx="48" cy="48" r="46" fill="url(#grad-felipe)" />
+  <text x="50%" y="56%" text-anchor="middle" font-family="Poppins, sans-serif" font-weight="600" font-size="34" fill="#10201e">
+    F
+  </text>
+</svg>

@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Melhorias iFood • Studio Brezer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="page-ifood">
+    <header class="site-header">
+      <div class="container header-bar">
+        <a class="brand" href="index.html" aria-label="Studio Brezer">
+          <img src="assets/logo-brezer.svg" alt="Studio Brezer" width="44" height="44" />
+          <span>Studio Brezer</span>
+        </a>
+        <nav id="menu" class="menu" aria-label="Navegação principal">
+          <a class="menu-link" href="index.html">Home</a>
+          <a class="menu-link" href="portfolio.html">Portfólio</a>
+          <a class="menu-link" href="servicos.html">Serviços</a>
+          <a class="menu-link active" href="ifood.html" aria-current="page">iFood</a>
+          <a class="menu-link" href="sobre.html">Sobre</a>
+          <a class="menu-link" href="contato.html">Contato</a>
+        </nav>
+        <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero hero-ifood tone-black">
+        <div class="container narrow hero-inner">
+          <h1>Seu iFood está perdendo R$ 12.300 por mês (e você nem sabe).</h1>
+          <p class="lead">
+            Fotos fracas e cardápio confuso derrubam pedidos todos os dias. Em 48h entregamos um iFood
+            com fotos irresistíveis, textos estratégicos e estrutura pronta para vender.
+          </p>
+          <div class="hero-actions">
+            <a class="button" href="https://wa.me/5500000000000" target="_blank" rel="noreferrer"
+              >Quero lotar meu delivery</a
+            >
+            <span class="hero-note">Agenda aberta para apenas 5 projetos este mês.</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section tone-light pain-points" aria-labelledby="pontos-dor">
+        <div class="container narrow">
+          <div class="section-heading">
+            <h2 id="pontos-dor">Você já percebeu que...</h2>
+          </div>
+          <ul class="pain-list">
+            <li>Fotos escuras e sem padrão derrubam a confiança na sua marca.</li>
+            <li>Descrições genéricas não explicam o valor do seu prato.</li>
+            <li>Promoções perdidas porque o cardápio não mostra combos ou extras.</li>
+            <li>Concorrentes com visual profissional aparecem primeiro no bairro.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section tone-accent solution" aria-labelledby="solucao">
+        <div class="container">
+          <div class="solution-grid">
+            <div class="solution-copy">
+              <h2 id="solucao">O pacote iFood Pro faz seu cardápio vender por você.</h2>
+              <ul>
+                <li>Tratamento fotográfico premium com foco em apetite visual.</li>
+                <li>Storytelling de cada prato para aumentar ticket médio.</li>
+                <li>Estrutura organizada por combos, destaques e upsells.</li>
+              </ul>
+            </div>
+            <div class="compare-stack">
+              <div class="compare-wrapper">
+                <img class="compare-image" src="assets/ifood-before.svg" alt="Antes do cardápio" />
+                <div class="compare-after">
+                  <img class="compare-image" src="assets/ifood-after.svg" alt="Depois do cardápio" />
+                </div>
+                <input class="compare-slider" type="range" min="0" max="100" value="55" aria-label="Comparar cardápio" />
+              </div>
+              <div class="compare-wrapper">
+                <img class="compare-image" src="assets/ifood-before-02.svg" alt="Antes foto de prato" />
+                <div class="compare-after">
+                  <img class="compare-image" src="assets/ifood-after-02.svg" alt="Depois foto de prato" />
+                </div>
+                <input class="compare-slider" type="range" min="0" max="100" value="60" aria-label="Comparar foto de prato" />
+              </div>
+              <div class="compare-wrapper">
+                <img class="compare-image" src="assets/ifood-before-03.svg" alt="Antes detalhe do cardápio" />
+                <div class="compare-after">
+                  <img class="compare-image" src="assets/ifood-after-03.svg" alt="Depois detalhe do cardápio" />
+                </div>
+                <input class="compare-slider" type="range" min="0" max="100" value="50" aria-label="Comparar detalhe" />
+              </div>
+              <div class="compare-wrapper">
+                <img class="compare-image" src="assets/ifood-before-04.svg" alt="Antes combo desorganizado" />
+                <div class="compare-after">
+                  <img class="compare-image" src="assets/ifood-after-04.svg" alt="Depois combo organizado" />
+                </div>
+                <input class="compare-slider" type="range" min="0" max="100" value="52" aria-label="Comparar combo" />
+              </div>
+              <div class="compare-wrapper">
+                <img class="compare-image" src="assets/ifood-before-05.svg" alt="Antes vitrine pouco atrativa" />
+                <div class="compare-after">
+                  <img class="compare-image" src="assets/ifood-after-05.svg" alt="Depois vitrine atrativa" />
+                </div>
+                <input class="compare-slider" type="range" min="0" max="100" value="48" aria-label="Comparar vitrine" />
+              </div>
+              <div class="compare-wrapper">
+                <img class="compare-image" src="assets/ifood-before-06.svg" alt="Antes fotos sem padronização" />
+                <div class="compare-after">
+                  <img class="compare-image" src="assets/ifood-after-06.svg" alt="Depois fotos padronizadas" />
+                </div>
+                <input class="compare-slider" type="range" min="0" max="100" value="58" aria-label="Comparar padronização" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section tone-black testimonials" aria-labelledby="depoimentos">
+        <div class="container narrow">
+          <div class="section-heading">
+            <h2 id="depoimentos">Prova social real</h2>
+            <p>Empreendedores que transformaram o faturamento do delivery.</p>
+          </div>
+          <div class="testimonial-grid">
+            <article class="testimonial-card">
+              <img src="assets/avatar-mariana.svg" alt="Foto de Mariana, Temaki Box" />
+              <p>
+                “Em duas semanas, saímos da terceira página para o topo do bairro. A vitrine nova parece uma
+                loja premium.”
+              </p>
+              <span class="testimonial-name">Mariana • Temaki Box</span>
+              <span class="testimonial-stars">★★★★★</span>
+            </article>
+            <article class="testimonial-card">
+              <img src="assets/avatar-felipe.svg" alt="Foto de Felipe, Forno &amp; Lenha" />
+              <p>
+                “Os combos ficaram claros e vendemos 47% a mais no horário do almoço. Atendimento rápido e
+                estratégico.”
+              </p>
+              <span class="testimonial-name">Felipe • Forno &amp; Lenha</span>
+              <span class="testimonial-stars">★★★★★</span>
+            </article>
+            <article class="testimonial-card">
+              <img src="assets/avatar-luciana.svg" alt="Foto de Luciana, Veggie Fit" />
+              <p>
+                “Cardápio novo, avaliação 4.8★ e ticket médio maior porque os upsells ficaram irresistíveis.”
+              </p>
+              <span class="testimonial-name">Luciana • Veggie Fit</span>
+              <span class="testimonial-stars">★★★★☆</span>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section tone-light metrics" aria-labelledby="resultados">
+        <div class="container">
+          <div class="metrics-grid">
+            <div class="metric-card">
+              <span class="metric-number">+47%</span>
+              <span class="metric-label">Pedidos em 30 dias</span>
+            </div>
+            <div class="metric-card">
+              <span class="metric-number">+R$15K</span>
+              <span class="metric-label">Ticket mensal médio</span>
+            </div>
+            <div class="metric-card">
+              <span class="metric-number">4,8★</span>
+              <span class="metric-label">Avaliação média dos clientes</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section tone-ink process" aria-labelledby="processo">
+        <div class="container narrow">
+          <div class="section-heading">
+            <h2 id="processo">Como funciona</h2>
+          </div>
+          <div class="process-grid">
+            <article class="step-card">
+              <span class="step-number">1</span>
+              <h3>Brief rápido</h3>
+              <p>Reunimos fotos, cardápio atual e o posicionamento desejado.</p>
+            </article>
+            <article class="step-card">
+              <span class="step-number">2</span>
+              <h3>Tratamento e copy</h3>
+              <p>Editamos imagens, escrevemos descrições persuasivas e estruturamos combos.</p>
+            </article>
+            <article class="step-card">
+              <span class="step-number">3</span>
+              <h3>Entrega guiada</h3>
+              <p>Receba tudo pronto com vídeo explicativo para subir no iFood.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section tone-light faq" id="faq" aria-labelledby="perguntas">
+        <div class="container narrow">
+          <div class="section-heading">
+            <h2 id="perguntas">FAQ rápido</h2>
+            <p>Dúvidas mais comuns sobre o iFood Pro.</p>
+          </div>
+          <div class="faq-list">
+            <details>
+              <summary>Em quanto tempo recebo tudo?</summary>
+              <p>O prazo padrão é de 48 horas úteis após o envio completo do material.</p>
+            </details>
+            <details>
+              <summary>Vocês fazem as fotos?</summary>
+              <p>Sim. Indicamos o setup ideal e, se estiver em São Paulo, fotografamos presencialmente.</p>
+            </details>
+            <details>
+              <summary>E se eu não gostar do resultado?</summary>
+              <p>Você tem direito a uma rodada de ajustes estratégicos sem custo adicional.</p>
+            </details>
+            <details>
+              <summary>Posso contratar só a edição das fotos?</summary>
+              <p>Claro. Montamos um pacote enxuto focado apenas em tratamento e padronização visual.</p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <section class="section tone-black guarantee" aria-labelledby="garantia">
+        <div class="container narrow">
+          <div class="guarantee-card">
+            <h2 id="garantia">Primeira consultoria gratuita</h2>
+            <p>
+              Antes de fechar, avaliamos seu cardápio atual e entregamos um plano rápido de melhorias. Se
+              não fizer sentido pra você, devolvemos o sinal.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section tone-accent final-cta">
+        <div class="container narrow">
+          <div class="cta-content">
+            <h2>Quer disputar o topo do iFood ainda este mês?</h2>
+            <p>Reserve uma das vagas disponíveis e veja seu delivery se destacar.</p>
+            <a class="button button-light" href="https://wa.me/5500000000000" target="_blank" rel="noreferrer"
+              >Reservar vaga agora</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <a class="brand" href="index.html">
+            <img src="assets/logo-brezer.svg" alt="Studio Brezer" width="44" height="44" />
+            <span>Studio Brezer</span>
+          </a>
+          <p>Design limpo para marcas que querem vender mais.</p>
+        </div>
+        <div>
+          <h3>Contato</h3>
+          <ul>
+            <li><a href="mailto:contato@studiobrezer.com">contato@studiobrezer.com</a></li>
+            <li><a href="https://wa.me/5500000000000" target="_blank" rel="noreferrer">WhatsApp direto</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Redes</h3>
+          <ul>
+            <li><a href="https://instagram.com/studiobrezer" target="_blank" rel="noreferrer">Instagram</a></li>
+            <li><a href="portfolio.html">Portfólio completo</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="footer-copy">© <span id="year"></span> Studio Brezer. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="app.js" defer></script>
+  </body>
+</html>

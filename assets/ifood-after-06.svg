@@ -1,0 +1,19 @@
+<svg width="640" height="420" viewBox="0 0 640 420" xmlns="http://www.w3.org/2000/svg">
+  <rect width="640" height="420" rx="24" fill="#081612" />
+  <g opacity="0.95">
+    <rect x="52" y="48" width="160" height="140" rx="22" fill="#1a9b8e" />
+    <rect x="236" y="48" width="160" height="140" rx="22" fill="#17b8a8" />
+    <rect x="420" y="48" width="160" height="140" rx="22" fill="#10796f" />
+  </g>
+  <g opacity="0.95">
+    <rect x="52" y="212" width="160" height="140" rx="22" fill="#ffd166" />
+    <rect x="236" y="212" width="160" height="140" rx="22" fill="#f28f1d" />
+    <rect x="420" y="212" width="160" height="140" rx="22" fill="#f25f5c" />
+  </g>
+  <rect x="72" y="70" width="120" height="100" rx="18" fill="#ffffff" opacity="0.12" />
+  <rect x="256" y="70" width="120" height="100" rx="18" fill="#ffffff" opacity="0.12" />
+  <rect x="440" y="70" width="120" height="100" rx="18" fill="#ffffff" opacity="0.12" />
+  <rect x="72" y="234" width="120" height="100" rx="18" fill="#ffffff" opacity="0.12" />
+  <rect x="256" y="234" width="120" height="100" rx="18" fill="#ffffff" opacity="0.12" />
+  <rect x="440" y="234" width="120" height="100" rx="18" fill="#ffffff" opacity="0.12" />
+</svg>
