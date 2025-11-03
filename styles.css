@@ -1,14 +1,17 @@
 :root {
   --teal: #1a9b8e;
   --teal-dark: #10796f;
+  --teal-bright: #1fb6a7;
   --ink: #142020;
   --muted: #4a5d5d;
   --surface: #f4f8f7;
   --surface-alt: #e6f1ef;
+  --surface-strong: #dcefeb;
   --white: #ffffff;
   --radius: 18px;
   --shadow-soft: 0 18px 44px rgba(20, 32, 32, 0.08);
   --shadow-card: 0 24px 48px rgba(20, 32, 32, 0.1);
+  --shadow-elevated: 0 48px 96px rgba(16, 61, 55, 0.16);
 }
 
 *,
@@ -52,16 +55,97 @@ main {
 .section {
   position: relative;
   padding: clamp(56px, 9vw, 104px) 0;
+  overflow: hidden;
+  isolation: isolate;
 }
 
 .section-panel {
   background: var(--white);
-  box-shadow: inset 0 1px 0 rgba(20, 32, 32, 0.08), inset 0 -1px 0 rgba(20, 32, 32, 0.06);
+  box-shadow: var(--shadow-elevated);
+}
+
+.section-panel::before {
+  content: "";
+  position: absolute;
+  inset: -40% -30% auto;
+  height: clamp(200px, 34vw, 360px);
+  background: radial-gradient(
+    circle at top,
+    rgba(26, 155, 142, 0.18) 0%,
+    rgba(26, 155, 142, 0) 70%
+  );
+  opacity: 0.9;
+  pointer-events: none;
 }
 
 .section-soft {
-  background: linear-gradient(180deg, rgba(26, 155, 142, 0.08) 0%, rgba(26, 155, 142, 0.03) 100%);
+  background: linear-gradient(180deg, rgba(26, 155, 142, 0.14) 0%, rgba(26, 155, 142, 0.05) 100%);
   box-shadow: inset 0 1px 0 rgba(20, 32, 32, 0.05), inset 0 -1px 0 rgba(20, 32, 32, 0.05);
+}
+
+.section-muted {
+  background: linear-gradient(
+    180deg,
+    rgba(26, 155, 142, 0.22) 0%,
+    rgba(26, 155, 142, 0.08) 40%,
+    rgba(26, 155, 142, 0.04) 100%
+  );
+  box-shadow: inset 0 1px 0 rgba(20, 32, 32, 0.05), inset 0 -1px 0 rgba(20, 32, 32, 0.04);
+}
+
+.section-contrast {
+  background: linear-gradient(135deg, var(--teal-dark) 0%, var(--teal-bright) 45%, var(--teal) 100%);
+  color: var(--white);
+  box-shadow: 0 40px 90px rgba(8, 43, 39, 0.4);
+}
+
+.section-contrast .section-header h2,
+.section-contrast h2,
+.section-contrast h3,
+.section-contrast h4,
+.section-contrast h5,
+.section-contrast h6 {
+  color: var(--white);
+}
+
+.section-contrast .section-header p,
+.section-contrast p,
+.section-contrast .lead {
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.section-contrast .eyebrow {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.section-contrast .link {
+  color: var(--white);
+}
+
+.section-contrast .ghost-button {
+  background: rgba(255, 255, 255, 0.15);
+  color: var(--white);
+}
+
+.section-contrast .ghost-button:hover,
+.section-contrast .ghost-button:focus-visible {
+  background: rgba(255, 255, 255, 0.24);
+}
+
+.section-contrast .stat-number {
+  color: var(--white);
+}
+
+.section-contrast .stat-label {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.section-contrast .pricing-value {
+  color: var(--teal);
+}
+
+.section-contrast .pricing-card.featured {
+  border: 2px solid rgba(255, 255, 255, 0.4);
 }
 
 .container {
@@ -211,6 +295,38 @@ main {
 .hero {
   padding: clamp(72px, 11vw, 132px) 0;
   position: relative;
+  overflow: hidden;
+  background: var(--white);
+}
+
+.hero-accent {
+  background: linear-gradient(
+    180deg,
+    var(--white) 0%,
+    rgba(26, 155, 142, 0.12) 45%,
+    rgba(26, 155, 142, 0.22) 100%
+  );
+}
+
+.hero-accent::after {
+  content: "";
+  position: absolute;
+  inset: auto -18% -45%;
+  height: clamp(240px, 34vw, 420px);
+  background: radial-gradient(
+      circle at top,
+      rgba(26, 155, 142, 0.4) 0%,
+      rgba(26, 155, 142, 0) 70%
+    ),
+    linear-gradient(180deg, rgba(26, 155, 142, 0) 0%, rgba(26, 155, 142, 0.35) 100%);
+  pointer-events: none;
+  opacity: 0.85;
+  z-index: 0;
+}
+
+.hero-accent .container {
+  position: relative;
+  z-index: 1;
 }
 
 .hero-home,
@@ -218,12 +334,11 @@ main {
 .hero-cta,
 .hero-about,
 .hero-contact {
-  background: var(--white);
   box-shadow: inset 0 -1px 0 rgba(20, 32, 32, 0.08);
 }
 
 .hero-home {
-  background: linear-gradient(135deg, rgba(26, 155, 142, 0.16), rgba(26, 155, 142, 0)) var(--white);
+  background: linear-gradient(135deg, rgba(26, 155, 142, 0.18), rgba(26, 155, 142, 0)) var(--white);
 }
 
 .hero-grid {
@@ -266,6 +381,7 @@ main {
   padding: clamp(24px, 4vw, 32px);
   border-radius: var(--radius);
   box-shadow: var(--shadow-soft);
+  color: var(--ink);
 }
 
 .card h3 {
@@ -313,6 +429,7 @@ main {
   box-shadow: var(--shadow-soft);
   display: grid;
   gap: 1rem;
+  color: var(--ink);
 }
 
 .project-card img {
@@ -338,6 +455,7 @@ main {
   display: grid;
   gap: 1rem;
   box-shadow: var(--shadow-soft);
+  color: var(--ink);
 }
 
 .service-icon {
@@ -386,6 +504,32 @@ main {
 .highlight-card .button:hover,
 .cta-card .button:focus-visible,
 .highlight-card .button:focus-visible {
+  background: var(--surface);
+}
+
+.section-contrast .cta-card,
+.section-contrast .highlight-card {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--white);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  box-shadow: 0 30px 60px rgba(5, 36, 33, 0.38);
+}
+
+.section-contrast .cta-card p,
+.section-contrast .highlight-card p {
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.section-contrast .cta-card .button,
+.section-contrast .highlight-card .button {
+  background: var(--white);
+  color: var(--teal);
+}
+
+.section-contrast .cta-card .button:hover,
+.section-contrast .highlight-card .button:hover,
+.section-contrast .cta-card .button:focus-visible,
+.section-contrast .highlight-card .button:focus-visible {
   background: var(--surface);
 }
 
@@ -452,6 +596,7 @@ main {
   overflow: hidden;
   box-shadow: var(--shadow-soft);
   display: grid;
+  color: var(--ink);
 }
 
 .gallery-card img {
@@ -572,6 +717,7 @@ main {
   box-shadow: var(--shadow-soft);
   display: grid;
   gap: 1rem;
+  color: var(--ink);
 }
 
 .step-number {
@@ -597,6 +743,7 @@ main {
   box-shadow: var(--shadow-soft);
   display: grid;
   gap: 1rem;
+  color: var(--ink);
 }
 
 .testimonial-name {
@@ -616,6 +763,7 @@ main {
   display: grid;
   gap: 1rem;
   text-align: center;
+  color: var(--ink);
 }
 
 .pricing-card ul {
@@ -638,6 +786,10 @@ main {
   box-shadow: var(--shadow-card);
 }
 
+.pricing-card.featured .pricing-value {
+  color: var(--white);
+}
+
 .pricing-card.featured .button {
   background: var(--white);
   color: var(--teal);
@@ -655,6 +807,7 @@ main {
   border-radius: var(--radius);
   padding: 1.5rem 2rem;
   box-shadow: var(--shadow-soft);
+  color: var(--ink);
 }
 
 .faq-item summary {
@@ -686,6 +839,7 @@ main {
   box-shadow: var(--shadow-soft);
   display: grid;
   gap: 1rem;
+  color: var(--ink);
 }
 
 .value-icon {
@@ -896,6 +1050,14 @@ main {
   .whatsapp {
     bottom: 1rem;
     right: 1rem;
+  }
+
+  .menu-toggle.open span:nth-child(1) {
+    transform: translateY(6px) rotate(45deg);
+  }
+
+  .menu-toggle.open span:nth-child(2) {
+    opacity: 0;
   }
 
   .menu-toggle.open span:nth-child(1) {
