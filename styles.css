@@ -1388,7 +1388,62 @@ main {
   }
 
   .menu-toggle {
-    display: inline-flex;
+    display: flex;
+  }
+
+  .menu-toggle.open span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+
+  .menu-toggle.open span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .menu-toggle.open span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+  .hero {
+    padding-top: 120px;
+  }
+
+  .cta-bar,
+  .custom-service {
+    text-align: center;
+    justify-content: center;
+  }
+
+  .metrics {
+    justify-content: center;
+  }
+
+  .whatsapp {
+    bottom: 1rem;
+    right: 1rem;
+  }
+
+  .menu-toggle.open span:nth-child(1) {
+    transform: translateY(6px) rotate(45deg);
+  }
+
+  .menu-toggle.open span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .menu-toggle.open span:nth-child(1) {
+    transform: translateY(6px) rotate(45deg);
+  }
+
+  .menu-toggle.open span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .menu-toggle.open span:nth-child(1) {
+    transform: translateY(6px) rotate(45deg);
+  }
+
+  .menu-toggle.open span:nth-child(2) {
+    opacity: 0;
   }
 
   .hero {
